@@ -11,9 +11,8 @@ import re
 def ip_is_valid():
     check = False
     global ip_list
-    
-    while True:
-        #Prompting user for input
+   
         print "\n# # # # # # # # # # # # # # # # # # # # # # # # # # # #\n"
         ip_file = raw_input("# Enter IP file name and extension: ")
         print "\n# # # # # # # # # # # # # # # # # # # # # # # # # # # #"
+        print (raw_input)
