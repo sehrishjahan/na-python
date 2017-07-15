@@ -1,7 +1,7 @@
 import os
 
 def ipcheck():
-    status = os.system("ping -c 1 " + str(pop))
+    status = os.system("ping -c 3 " + str(pop))
     if status == 0:
         print("System " + str(pop) + " is UP !")
     else:
