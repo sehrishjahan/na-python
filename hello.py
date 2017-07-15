@@ -1,18 +1,12 @@
-import paramiko
-import threading
-import os.path
-import subprocess
-import time
-import sys
-import re
+import subprocess as sp
+
+def ipcheck():
+    status,result = sp.getstatusoutput("ping -c1 -w2 " + str(pop))
+    if status == 0:
+        print("System " + str(pop) + " is UP !")
+    else:
+        print("System " + str(pop) + " is DOWN !")
 
 
-#Checking IP address file and content validity
-def ip_is_valid():
-    check = False
-    global ip_list
-   
-        print "\n# # # # # # # # # # # # # # # # # # # # # # # # # # # #\n"
-        ip_file = raw_input("# Enter IP file name and extension: ")
-        print "\n# # # # # # # # # # # # # # # # # # # # # # # # # # # #"
-        print (raw_input)
+pop = input("Enter the ip address: ")
+ipcheck()
