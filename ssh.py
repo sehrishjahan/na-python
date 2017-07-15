@@ -1,5 +1,4 @@
 import paramiko
-ssh = paramiko.SSHClient()
 
 ip = '192.168.2.110'
 username = 'csrv'
