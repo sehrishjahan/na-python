@@ -1,7 +1,7 @@
 import subprocess as sp
 
 def ipcheck():
-    status,result = sp.getstatusoutput("ping -c1 -w2 " + str(pop))
+    status = sp.getstatusoutput("ping -c 1 " + str(pop))
     if status == 0:
         print("System " + str(pop) + " is UP !")
     else:
