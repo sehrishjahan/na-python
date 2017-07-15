@@ -8,6 +8,5 @@ ssh.connect('192.168.2.110', port=22, username='csrv', password='cisco1234')
 stdin, stdout, stderr = ssh.exec_command('show ip int brief')
 output = stdout.readlines()
 type(output)
-<type 'list'>
 print '\n'.join(output)
 
