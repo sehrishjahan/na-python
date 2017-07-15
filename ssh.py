@@ -1,8 +1,8 @@
 import paramiko
 ssh = paramiko.SSHClient()
 
-ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-ssh.connect('192.168.2.110', port=22, username='csrv', password='cisco1234')
+session.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+session.connect('192.168.2.110', port=22, username='csrv', password='cisco1234')
 #Start an interactive shell session on the router
         connection = session.invoke_shell()	
         
