@@ -1,12 +1,12 @@
 import os
 
 def ipcheck():
-    status = os.system("ping -c 3 " + str(pop))
+    status = os.system("ping -c 3 " + s)
     if status == 0:
-        print("System " + str(pop) + " is UP !")
+        print("System " + s + " is UP !")
     else:
-        print("System " + str(pop) + " is DOWN !")
+        print("System " + s + " is DOWN !")
 
 
-pop = input("Enter the ip address: ")
+s = raw_input('Enter the ip address: ')
 ipcheck()
