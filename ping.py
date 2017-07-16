@@ -1,13 +1,14 @@
 import os
 
-def ipcheck():
-    status = os.system("ping -c 3 " + s)
+def ping():
+    response = os.system("ping -c 3 " + s)
 
-    if status == 0:
+    if response == 0:
         print("System " + s + " is UP !")
     else:
         print("System " + s + " is DOWN !")
 
 
-s = raw_input('Enter the ip address: ')
-ipcheck()
+s = raw_input('Enter the ip address: ')         #Prompting user for ip address
+
+ping()
