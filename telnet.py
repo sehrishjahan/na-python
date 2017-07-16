@@ -15,4 +15,4 @@ if password:
  tn.write(password + "\n")
  
  tn.write("ls\n")
-  tn.write("exit\n")
+ tn.write("exit\n")
