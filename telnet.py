@@ -18,6 +18,6 @@ if password:
  tn.write("cisco1234\n")
  tn.write("conf t\n")
  tn.write("show ip int brief\n")
-
- 
  tn.write("end\n")
+ 
+ print tn.read_all()
