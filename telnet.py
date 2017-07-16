@@ -17,6 +17,9 @@ if password:
  tn.write("enable\n")
  tn.write("cisco1234\n")
  tn.write("conf t\n")
+ tn.write("int GigabitEthernet2\n")
+ tn.write("ip address 192.168.2.111 255.255.255.0\n")
+   
  #tn.write("show ip interface brief\n")
  tn.write("end\n")
  tn.write("exit\n")
