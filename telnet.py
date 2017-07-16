@@ -18,7 +18,7 @@ if password:
  tn.write("cisco1234\n")
  tn.write("conf t\n")
  #tn.write("show ip interface brief\n")
- #tn.write("end\n")
+ tn.write("end\n")
  #tn.write("exit\n")
 
  
