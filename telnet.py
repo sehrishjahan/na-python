@@ -19,5 +19,7 @@ if password:
  tn.write("conf t\n")
  tn.write("show ip int brief\n")
  tn.write("end\n")
+ tn.write("exit\n")
+
  
  print tn.read_all()
