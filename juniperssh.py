@@ -3,6 +3,5 @@ from jnpr.junos import Device
 dev = Device(host='192.168.2.101', user='juniper', password='juniper123')
 dev.open()
 pprint(dev.facts)
-pprint(show ip interfaces)
 dev.close()
 
