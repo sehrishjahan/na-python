@@ -19,7 +19,7 @@ if plat == "Linux":
         )
         if ping:
                 print(ip, "inactive")
-            else:
+        else:
                 print(ip, "active")
         
         out, error = ping.communicate()
