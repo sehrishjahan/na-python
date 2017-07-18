@@ -12,11 +12,9 @@ lines = hostsFile.readlines()
 if plat == "Linux":
     for line in lines:
         line = line.strip( )
-        ping = subprocess.Popen(
-            ["ping", "-c", "1", "-l", "1", "-s", "1", "-W", "1", line],
-            stdout = subprocess.PIPE,
-            stderr = subprocess.PIPE
-        )
+        ping = os.system("ping -c 1 ", line)
+
+       
         out, error = ping.communicate()
         print out
         print error
