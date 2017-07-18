@@ -18,9 +18,9 @@ if plat == "Linux":
             stderr = subprocess.PIPE
         )
         if ping:
-                print(ip, "inactive")
+                print(line, "inactive")
         else:
-                print(ip, "active")
+                print(line, "active")
         
         out, error = ping.communicate()
         print out
