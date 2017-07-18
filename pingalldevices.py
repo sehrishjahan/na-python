@@ -17,7 +17,7 @@ if plat == "Linux":
             stdout = subprocess.PIPE,
             stderr = subprocess.PIPE
         )
-        if ping:
+        if ping == 0:
                 print(line, "inactive")
         else:
                 print(line, "active")
