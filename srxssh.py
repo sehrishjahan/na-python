@@ -2,12 +2,12 @@ from netmiko import ConnectHandler #imported netmiko library
 
 #initialized variables.
 platform = 'juniper'
-host = '192.168.2.101'
+host = '192.168.2.20'
 username = 'juniper'
-password = 'juniper123'
+password = 'cisco1234'
 
 #calling ConnectHandler function and passing in variables
-net_connect = ConnectHandler(device_type=platform, ip=host, username='juniper', password='juniper123')
+net_connect = ConnectHandler(device_type=platform, ip=host, username='juniper', password='cisco1234')
 net_connect.find_prompt()
 
 #using send_command() method to send the 'show ip int brief' command to router
