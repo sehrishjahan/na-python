@@ -2,7 +2,7 @@ from netmiko import ConnectHandler #imported netmiko library
 
 #initialized variables.
 platform = 'juniper'
-host = '192.168.2.20'
+host = '192.168.2.14'
 username = 'juniper'
 password = 'cisco1234'
 
