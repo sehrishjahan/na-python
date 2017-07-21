@@ -12,6 +12,6 @@ net_connect.find_prompt()
 
 #using send_command() method to send the 'show configuration' command to router
 
-output = net_connect.send_command("show configuration")
+output = net_connect.send_command("show configuration ; show interfaces terse")
 
 print output
