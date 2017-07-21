@@ -30,7 +30,7 @@ juniper_srx2 = {
 }
 all_devices =[csrv2, csrv3, juniper_srx, juniper_srx2]
 start_time = datetime.now()
-for a_devices in all_devices:
+for a_device in all_devices:
      net_connect = ConnectHandler(**a_device)
      output = net_connect.send_command("show arp")
      print"\n\n^^^^^^ Device{0}^^^^^^^".format(a_device['device_type'])
