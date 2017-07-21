@@ -7,7 +7,7 @@ csrv2 = {
 'password':'cisco1234',
 'verbose':False,
 }
- csrv3 = {
+csrv3 = {
 'device_type':'cisco_ios',
 'ip': '192.168.2.13',
 'username': 'cisco',
