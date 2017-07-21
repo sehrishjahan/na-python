@@ -10,8 +10,8 @@ password = 'cisco1234'
 net_connect = ConnectHandler(device_type=platform, ip=host, username='juniper', password='cisco1234')
 net_connect.find_prompt()
 
-#using send_command() method to send the 'show interfaces terse' command to router
+#using send_command() method to send the 'show configuration' command to router
 
 output = net_connect.send_command("show configuration")
-output = net_connect.send_command("show interfaces terse")
+
 print output
