@@ -12,5 +12,5 @@ net_connect.find_prompt()
 
 #using send_command() method to send the 'show interfaces terse' command to router
 
-output = net_connect.send_command("sshow ospf neighbor")
+output = net_connect.send_command("show ospf neighbor")
 print output
