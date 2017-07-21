@@ -12,5 +12,5 @@ net_connect.find_prompt()
 
 #using send_command() method to send the 'show ip int brief' command to router
 
-output = net_connect.send_command("show interfaces | display set")
+output = net_connect.send_command("show interfaces terse")
 print output
