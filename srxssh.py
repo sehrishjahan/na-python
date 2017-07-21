@@ -11,6 +11,6 @@ net_connect = ConnectHandler(device_type=platform, ip=host, username='juniper', 
 net_connect.find_prompt()
 
 #using send_command() method to send the 'show ip int brief' command to router
-output = net_connect.send_command("show interface terse")
+
 output = net_connect.send_command("show interfaces | display set")
 print output
