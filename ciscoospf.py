@@ -10,7 +10,6 @@ def check_ospf(net_connect, cmd='show run | inc router ospf'):
 
 def main():
     device_list = [csrv2,csrv3]
-    start_time = datetime.now()
     print
 
     for a_device in device_list:
