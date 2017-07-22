@@ -13,10 +13,7 @@ net_connect.find_prompt()
 #using send_command() method to send the 'show configuration' command to router
 print('\n###############################################################################\n\n')
 print('...................JUNIPER COMMAND SHOW CONFIGURATION OUTPUT....................\n\n')
-output = net_connect.send_config_from_file(config_file=file_name)
+output = net_connect.send_config_from_file(config_file=csrv2.py)
 print output
-print('\n################################################################################\n\n')
-print('...................JUNIPER COMMAND SHOW INTERFACES TERSE OUTPUT................\n\n')
-output = net_connect.send_command("show interfaces terse ")
-print output
+
 
