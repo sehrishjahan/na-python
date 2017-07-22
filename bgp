@@ -7,7 +7,7 @@ from my_devices import cisco_ios, cisco_xr, arista_veos
 
 
 def main():
-    device_list = [csrv1, csrv2, csrv3]
+    device_list = [csrv, csrv2, csrv3]
     start_time = datetime.now()
     print
     for a_device in device_list:
