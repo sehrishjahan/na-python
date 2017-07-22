@@ -6,7 +6,7 @@ SSH    = {
     'port': 22,
 }
 
- csrv2': { 
+ 'csrv2': { 
     'device_type': 'cisco_ios',
     'ip': '192.168.2.12',
     'username': 'csrv2',
