@@ -1,22 +1,16 @@
-from netmiko import ConnectHandler
+from netmiko import ConnectHandler #imported netmiko library
 
-srx1 = {
-'device_type':'juniper',
-'ip': '192.168.2.14',
-'username': 'juniper',
-'password':'cisco1234',
-}
+#initialized variables.
+platform = 'juniper'
+host = '192.168.2.15'
+username = 'juniper'
+password = 'cisco1234'
 
+#calling ConnectHandler function and passing in variables
+net_connect = ConnectHandler(device_type=platform, ip=host, username='juniper', password='cisco1234')
+net_connect.find_prompt()
 
-def main():
-    device_list = [csrv, csrv2, csrv3]
-    start_time = datetime.now()
-    print
-    for a_device in device_list:
-        net_connect = ConnectHandler(**csrv)
-        print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
-    print "Time elapsed: {}\n".format(datetime.now() - start_time)
+#using send_command() method to send command to router
 
-
-if __name__ == "__main__":
-main()
+output = net_connect.send_command(" ")
+print output
