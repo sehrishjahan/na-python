@@ -11,7 +11,11 @@ net_connect = ConnectHandler(device_type=platform, ip=host, username='juniper', 
 net_connect.find_prompt()
 
 #using send_command() method to send the 'show configuration' command to router
-
+print('################################\n')
+print('command show configuration output')
 output = net_connect.send_command("show configuration ")
-
+print output
+print('################################\n')
+print('command show interfaces terse output')
+output = net_connect.send_command("show interfaces terse ")
 print output
