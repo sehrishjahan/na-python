@@ -4,10 +4,10 @@ from netmiko import ConnectHandler
 from ospfdevices import csrv2, csrv3
 
 
-def check_bgp(net_connect, cmd='show run | inc router ospf'):
+def check_ospf(net_connect, cmd='show run | inc router ospf'):
     """Check whether OSPF is currently configured on device. Return boolean"""
     output = net_connect.send_command_expect(cmd)
-    return 'bgp' in output
+    return 'ospf' in output
 
 def main():
     device_list = [csrv2, csrv3]
@@ -28,4 +28,4 @@ def main():
 
 
 if __name__ == "__main__":
-main()
+    main()
