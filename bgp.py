@@ -3,7 +3,7 @@
 from datetime import datetime
 
 from netmiko import ConnectHandler
-from my_devices import cisco_ios, cisco_xr, arista_veos
+from devices import csrv, csrv2, csrv3
 
 
 def main():
