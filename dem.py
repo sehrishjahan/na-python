@@ -13,7 +13,7 @@ net_connect.find_prompt()
 #using send_command() method to send the 'show configuration' command to router
 print('\n###############################################################################\n\n')
 print('................................csrv2 OSPF...................\n\n')
-output = net_connect.send_config_from_file(config_file=csrv2.py)
+output = net_connect.send_config_from_file(config_file=csrv2config.py)
 print output
 
 
