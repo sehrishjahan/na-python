@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from netmiko import ConnectHandler
-from ospfdevices import csrv2, csrv3
+from ospfdevices import csrv2
 
 
 def check_ospf(net_connect, cmd='show run | inc router ospf'):
@@ -10,7 +10,7 @@ def check_ospf(net_connect, cmd='show run | inc router ospf'):
     return 'ospf' in output
 
 def main():
-    device_list = [csrv2, csrv3]
+    device_list = [csrv2]
     start_time = datetime.now()
     print
 
