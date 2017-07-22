@@ -1,4 +1,3 @@
-from datetime import datetime
 
 from netmiko import ConnectHandler
 from ospfdevices import csrv2,csrv3
@@ -23,8 +22,6 @@ def main():
         else:
             print "No OSPF"
         print
-
-    print "Time elapsed: {}\n".format(datetime.now() - start_time)
 
 
 if __name__ == "__main__":
