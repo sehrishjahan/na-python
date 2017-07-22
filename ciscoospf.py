@@ -1,4 +1,4 @@
-
+from datetime import datetime
 from netmiko import ConnectHandler
 from ospfdevices import csrv2,csrv3
 
@@ -10,6 +10,8 @@ def check_ospf(net_connect, cmd='show run | inc router ospf'):
 
 def main():
     device_list = [csrv2,csrv3]
+    start_time = datetime.now()
+    
     print
 
     for a_device in device_list:
@@ -21,7 +23,7 @@ def main():
         else:
             print "No OSPF"
         print
-
+ print "Time elapsed: {}\n".format(datetime.now() - start_time)
 
 if __name__ == "__main__":
     main()
