@@ -18,7 +18,7 @@ def main():
         net_connect = ConnectHandler(**a_device)
         net_connect.enable()
         print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
-        if check_bgp(net_connect):
+        if check_ospf(net_connect):
             print "OSPF currently configured"
         else:
             print "No OSPF"
