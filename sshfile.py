@@ -4,7 +4,6 @@ from netmiko import ConnectHandler #imported netmiko library
 platform = 'cisco_ios'
 host = '192.168.2.11'
 username = 'csrv'
-password = 'cisco1234'
 
 #calling ConnectHandler function and passing in variables
 net_connect = ConnectHandler(device_type=platform, ip=host, username='csrv', password='telnet')
