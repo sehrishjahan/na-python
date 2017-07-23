@@ -60,7 +60,7 @@ def main():
     print
 
     for a_device in device_list:
-        as_number = a_device.pop('as_number')
+       # as_number = a_device.pop('as_number')
         as_number = 100
 
         
