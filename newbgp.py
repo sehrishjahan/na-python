@@ -27,7 +27,7 @@ csrv3 = {
 
 all_device = [csrv, csrv2, csrv3]    
     
-    for a_device in all_device:
+for a_device in all_device:
         net_connect = ConnectHandler(**a_device)
         net_connect.enable()
         output = net_connect.send_command("show ip int brief")
