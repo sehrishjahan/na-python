@@ -41,8 +41,8 @@ def remove_bgp_config(net_connect, cmd='no router bgp', as_number=''):
     bgp_cmd = "{} {}".format(cmd, str(as_number))
     cmd_list = [bgp_cmd]
     output = net_connect.send_config_set(cmd_list)
-    if net_connect.device_type == 'cisco_xr_ssh':
-        output += net_connect.commit()
+   # if net_connect.device_type == 'cisco_xr_ssh':
+    #    output += net_connect.commit()
     print output
 
 def configure_bgp(net_connect, file_name=''):
@@ -65,7 +65,7 @@ def main():
         net_connect = ConnectHandler(**a_device)
         
         net_connect.enable()
-        print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
+        #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
         if check_bgp(net_connect):
             print "BGP currently configured"
             remove_bgp_config(net_connect, as_number=as_number)
@@ -77,13 +77,12 @@ def main():
             raise ValueError("BGP configuration still detected")
 
         # Construct file_name based on device_type
-        device_type = net_connect.device_type
-        file_name = 'bgp_' + device_type.split("_ssh")[0] + '.txt'
+        #device_type = net_connect.device_type
+        #file_name = 'bgp_' + device_type.split("_ssh")[0] + '.txt'
 
         # Configure BGP
-        output = configure_bgp(net_connect, bgp_csrv)
+        output = configure_bgp(net_connect, bgp_csrv.txt)
         print output
-        print
 
 if __name__ == "__main__":
     main()
