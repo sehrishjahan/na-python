@@ -1,0 +1,2 @@
+router bgp 100
+neighbor 192.168.2.11 remote-as 100
