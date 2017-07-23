@@ -7,6 +7,7 @@ csrv = {
     'ip': '192.168.2.11',
     'username': 'csrv',
     'password': 'telnet',
+    'secret': 'cisco'
 }
 
 csrv2 = { 
@@ -14,6 +15,8 @@ csrv2 = {
     'ip': '192.168.2.12',
     'username': 'csrv2',
     'password': 'telnet',
+    'secret': 'cisco1234'
+
 }
 
 csrv3 = {     
@@ -21,6 +24,8 @@ csrv3 = {
     'ip': '192.168.2.13',
     'username': 'csrv3',
     'password': 'telnet',
+    'secret': 'cisco'
+
 }
 
 all_device = [csrv, csrv2, csrv3]    
