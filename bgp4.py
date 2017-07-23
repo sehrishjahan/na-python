@@ -48,7 +48,7 @@ def remove_bgp_config(net_connect, cmd='no router bgp', as_number=''):
 def configure_bgp(net_connect, file_name=''):
     """Configure BGP on device."""
     try:
-        output = net_connect.send_config_from_file(config_file=bgp_csrv.txt)
+        output = net_connect.send_config_from_file(config_file=file_name)
         #if net_connect.device_type == 'cisco_xr_ssh':
          #   output += net_connect.commit()
         return output
@@ -81,7 +81,7 @@ def main():
         file_name = 'bgp_' + device_type.split("_ssh")[0] + '.txt'
 
         # Configure BGP
-        output = configure_bgp(net_connect, file_name)
+        output = configure_bgp(net_connect, bgp_csrv.txt)
         print output
         print
 
