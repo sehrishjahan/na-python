@@ -36,7 +36,7 @@ def check_bgp(net_connect, cmd='show run | inc router bgp'):
     output = net_connect.send_command_expect(cmd)
     return 'bgp' in output
 
-def remove_bgp_config(net_connect, cmd='no router bgp', as_number=''):
+def remove_bgp_config(net_connect, cmd='no router bgp', as_number='100'):
     """Remove BGP from the config"""
     bgp_cmd = "{} {}".format(cmd, str(as_number))
     cmd_list = [bgp_cmd]
@@ -48,7 +48,7 @@ def remove_bgp_config(net_connect, cmd='no router bgp', as_number=''):
 def configure_bgp(net_connect, file_name=''):
     """Configure BGP on device."""
     try:
-        output = net_connect.send_config_from_file(config_file=bgp_csrv)
+        output = net_connect.send_config_from_file(config_file=bgp_csrv.txt)
         #if net_connect.device_type == 'cisco_xr_ssh':
          #   output += net_connect.commit()
         return output
@@ -61,9 +61,7 @@ def main():
 
     for a_device in device_list:
        # as_number = a_device.pop('as_number')
-        as_number = 100
-
-        
+       # as_number = 100
         net_connect = ConnectHandler(**a_device)
         
         net_connect.enable()
