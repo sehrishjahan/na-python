@@ -1,4 +1,4 @@
-csrv  {    
+ csrv  {    
     'device_type': 'cisco_ios',
     'ip': '192.168.2.11',
     'username': 'csrv',
