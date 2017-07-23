@@ -3,7 +3,7 @@ from datetime import datetime
 from netmiko import ConnectHandler
 import getpass
 
-from devices import csrv, csrv2, csrv3
+#from devices import csrv, csrv2, csrv3
 
 csrv = {    
     'device_type': 'cisco_ios',
