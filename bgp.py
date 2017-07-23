@@ -10,8 +10,8 @@ def main():
     device_list = [csrv, csrv2, csrv3]
     start_time = datetime.now()
     print
-    for a_device in device_list:
-        net_connect = ConnectHandler(**a_device)
+    for adevice in device_list:
+        net_connect = ConnectHandler(**adevice)
         print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
     print "Time elapsed: {}\n".format(datetime.now() - start_time)
 
