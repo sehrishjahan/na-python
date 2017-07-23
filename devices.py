@@ -1,4 +1,4 @@
- csrv = {    
+ csrv =  {    
     'device_type': 'cisco_ios',
     'ip': '192.168.2.11',
     'username': 'csrv',
@@ -14,7 +14,8 @@
     'port': 9722,
 }
 
-csrv3 = {     'device_type': 'cisco_ios',
+csrv3 = {     
+    'device_type': 'cisco_ios',
     'ip': '192.168.2.13',
     'username': 'csrv3',
     'password': 'telnet',
