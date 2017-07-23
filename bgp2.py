@@ -14,8 +14,8 @@ def main():
     start_time = datetime.now()
     print
 
-    for a_device in device_list:
-        net_connect = ConnectHandler(**a_device)
+    for device in device_list:
+        net_connect = ConnectHandler(**csrv)
         net_connect.enable()
         print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
         if check_bgp(net_connect):
