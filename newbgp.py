@@ -25,7 +25,7 @@ csrv3 = {
     'port': 8622,
 }
 
-    all_device = [csrv, csrv2, csrv3]    
+ all_device = [csrv, csrv2, csrv3]    
     
     for a_device in all_device:
         net_connect = ConnectHandler(**a_device)
