@@ -33,7 +33,7 @@ def main():
     start_time = datetime.now()
     print
 
-    for device in device_list:
+    for a_device in device_list:
         as_number = a_device.pop('as_number')
         net_connect = ConnectHandler(**csrv)
         net_connect.enable()
