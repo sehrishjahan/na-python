@@ -5,7 +5,6 @@ csrv = {
     'ip': '192.168.2.11',
     'username': 'csrv',
     'password': getpass()
-    'port': 22,
 }
 
 csrv2 = { 
