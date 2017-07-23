@@ -1,6 +1,8 @@
 from datetime import datetime
 
 from netmiko import ConnectHandler
+import getpass
+
 from devices import csrv, csrv2, csrv3
 
 
