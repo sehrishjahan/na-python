@@ -29,7 +29,7 @@ def configure_bgp(net_connect, file_name=''):
         print "Error reading file: {}".format(file_name)
 
 def main():
-    device_list = [cisco_ios, cisco_xr, arista_veos]
+    device_list = [csrv, csrv2, csrv3]
     start_time = datetime.now()
     print
 
