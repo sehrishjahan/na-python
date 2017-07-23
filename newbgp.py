@@ -14,7 +14,6 @@ csrv2 = {
     'ip': '192.168.2.12',
     'username': 'csrv2',
     'password': 'telnet',
-    'port': 9722,
 }
 
 csrv3 = {     
@@ -22,13 +21,12 @@ csrv3 = {
     'ip': '192.168.2.13',
     'username': 'csrv3',
     'password': 'telnet',
-    'port': 8622,
 }
 
 all_device = [csrv, csrv2, csrv3]    
     
 for a_device in all_device:
-        net_connect = ConnectHandler(**a_device)
+        net_connect = ConnectHandler(**csrv)
         net_connect.enable()
         output = net_connect.send_command("show ip int brief")
         print output
