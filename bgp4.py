@@ -5,6 +5,31 @@ import getpass
 
 from devices import csrv, csrv2, csrv3
 
+csrv = {    
+    'device_type': 'cisco_ios',
+    'ip': '192.168.2.11',
+    'username': 'csrv',
+    'password': 'telnet',
+    'secret': 'cisco'
+}
+
+csrv2 = { 
+    'device_type': 'cisco_ios',
+    'ip': '192.168.2.12',
+    'username': 'csrv2',
+    'password': 'telnet',
+    'secret': 'cisco1234'
+
+}
+
+csrv3 = {     
+    'device_type': 'cisco_ios',
+    'ip': '192.168.2.13',
+    'username': 'csrv3',
+    'password': 'telnet',
+    'secret': 'cisco'
+
+}
 
 def check_bgp(net_connect, cmd='show run | inc router bgp'):
     """Check whether BGP is currently configured on device. Return boolean"""
@@ -32,12 +57,11 @@ def configure_bgp(net_connect, file_name=''):
 
 def main():
     device_list = [csrv, csrv2, csrv3]
-    start_time = datetime.now()
     print
 
     for a_device in device_list:
         as_number = a_device.pop('as_number')
-        net_connect = ConnectHandler(**csrv)
+        net_connect = ConnectHandler(**a_device)
         net_connect.enable()
         print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
         if check_bgp(net_connect):
@@ -58,9 +82,6 @@ def main():
         output = configure_bgp(net_connect, file_name)
         print output
         print
-
-    print "Time elapsed: {}\n".format(datetime.now() - start_time)
-
 
 if __name__ == "__main__":
     main()
