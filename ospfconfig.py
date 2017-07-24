@@ -2,6 +2,8 @@ from datetime import datetime
 
 from netmiko import ConnectHandler
 import getpass
+
+
 csrv2 = {    
     'device_type': 'cisco_ios',
     'ip': '192.168.2.12',
