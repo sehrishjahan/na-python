@@ -65,6 +65,8 @@ def main():
         # Configure OSPF
         ospfconfig1 = configure_ospf(net_connect, 'ospfcsrv2.txt')
         print ospfconfig1
+        output = net_connect.send_command("show ip route ")
+        print output
         
 if __name__ == "__main__":
     main()
