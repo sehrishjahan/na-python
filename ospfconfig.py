@@ -1,10 +1,17 @@
 from datetime import datetime
 
-from mydevices impport csrv2
 from netmiko import ConnectHandler
 import getpass
 
 #from devices import csrv2
+
+csrv = {    
+    'device_type': 'cisco_ios',
+    'ip': '192.168.2.11',
+    'username': 'csrv',
+    'password': 'telnet',
+    'secret': 'cisco'
+}
 
 def check_ospf(net_connect, cmd='show run | inc router ospf'):
     """Check whether OSPF is currently configured on device. Return boolean"""
