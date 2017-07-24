@@ -16,7 +16,7 @@ csrv2 = {
 def check_ospf(net_connect, cmd='show run | inc router ospf'):
     """Check whether oospf is currently configured on device. Return boolean"""
     output = net_connect.send_command_expect(cmd)
-    return 'bgp' in output
+    return 'ospf' in output
 
 def remove_ospf_config(net_connect, cmd='no router ospf', as_number=''):
     """Remove OSPF from the config"""
