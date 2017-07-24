@@ -1,5 +1,5 @@
 router ospf 100
 router-id 2.2.2.2
-passive interface GigabitEthernet3
+passive-interface GigabitEthernet3
 network 192.168.1.0 0.0.0.255 area 0
 network 192.168.4.0 0.0.0.255 area 0
