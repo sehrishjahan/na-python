@@ -16,7 +16,7 @@ def remove_ospf_config(net_connect, cmd='no router ospf', as_number=''):
     ospf_cmd = "{} {}".format(cmd, str(as_number))
     cmd_list = [ospf_cmd]
     output = net_connect.send_config_set(cmd_list)
-   # if net_connect.device_type == 'juniper':
+   # if net_connect.device_type == 'cisco_xr_ssh':
     #    output += net_connect.commit()
     print output
 
@@ -24,14 +24,14 @@ def configure_ospf(net_connect, file_name=''):
     """Configure OSPF on device."""
     try:
         output = net_connect.send_config_from_file(config_file=file_name)
-        #if net_connect.device_type == 'juniper':
+        #if net_connect.device_type == 'cisco_xr_ssh':
          #   output += net_connect.commit()
         return output
     except IOError:
         print "Error reading file: {}".format(file_name)
 
 def main():
-    device_list = [csrv2, csrv3]
+    device_list = [csrv2]
     print
 
     for a_device in device_list:
@@ -57,12 +57,7 @@ def main():
 
         # Configure OSPF
         bgpconfig1 = configure_ospf(net_connect, 'csrv2ospf.txt')
-        bgpconfig2 = configure_ospf(net_connect, 'csrv3ospf.txt')
         print bgpconfig1
-        print bgpconfig2
-
-        
-        
-
+  
 if __name__ == "__main__":
     main()
