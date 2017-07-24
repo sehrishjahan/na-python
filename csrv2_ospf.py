@@ -69,4 +69,4 @@ def main():
 if __name__ == "__main__":
     main()
     
-print "\n\n\n * * * * * * * * * *    CONFIGURATION WAS DONE SUCCESSFULLY     * * * * * * * * * *  \n"
+print "\n\N * * * * * * * *    CONFIGURATION WAS DONE SUCCESSFULLY     * * * * * * * * *  \n"
