@@ -3,7 +3,7 @@ from datetime import datetime
 from netmiko import ConnectHandler
 import getpass
 
-print "\n\n  * * * * * * * * * * *    CONFIGURING OSPF ON CSRv2     * * * * * * * * * * *  \n"
+print "\n\n  * * * * * * * * * * *    CONFIGURING OSPF ON SRX      * * * * * * * * * * *  \n"
 
 srx1 = {    
     'device_type': 'juniper',
@@ -22,7 +22,7 @@ srx2 = {
 }
 
 
-def check_ospf(net_connect, cmd='show run | inc router ospf'):
+def check_ospf(net_connect, cmd='show route'):
     """Check whether oospf is currently configured on device. Return boolean"""
     output = net_connect.send_command_expect(cmd)
     return 'ospf' in output
