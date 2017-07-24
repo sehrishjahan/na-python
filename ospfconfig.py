@@ -62,7 +62,7 @@ def main():
         #device_type = net_connect.device_type
         #file_name = 'ospf_' + device_type.split("_ssh")[0] + '.txt'
 
-        # Configure BGP
+        # Configure OSPF
         bgpconfig1 = configure_bgp(net_connect, 'csrv2ospf.txt')
         print bgpconfig1
 if __name__ == "__main__":
