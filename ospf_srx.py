@@ -3,7 +3,7 @@ from datetime import datetime
 from netmiko import ConnectHandler
 import getpass
 
-print "\n\n  * * * * * * * * * * *    CONFIGURING OSPF ON SRX      * * * * * * * * * * *  \n"
+print "\n\n  * * * * * * * * * * *    CONFIGURING OSPF ON SRX1    * * * * * * * * * * *  \n"
 
 srx1 = {    
     'device_type': 'juniper',
@@ -44,7 +44,8 @@ def configure_ospf(net_connect, file_name=''):
         return output
     except IOError:
         print "Error reading file: {}".format(file_name)
-
+print "\n\n  * * * * * * * * * * *    CONFIGURING OSPF ON SRX1    * * * * * * * * * * *  \n"
+print "\n\n  * * * * * * * * * * *    CONFIGURING OSPF ON SRX1    * * * * * * * * * * *  \n"
 def main():
     device_list = [srx1, srx2]
     print
