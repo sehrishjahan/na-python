@@ -5,8 +5,21 @@ import getpass
 
 print "\n\n  * * * * * * * * * * *    CONFIGURING OSPF ON CSRv2     * * * * * * * * * * *  \n"
 
+srx1 = {    
+    'device_type': 'juniper',
+    'ip': '192.168.2.14',
+    'username': 'juniper',
+    'password': 'cisco1234',
+     
+}
 
-
+srx2 = {    
+    'device_type': 'juniper',
+    'ip': '192.168.2.15',
+    'username': 'juniper',
+    'password': 'cisco1234',
+     
+}
 
 
 def check_ospf(net_connect, cmd='show run | inc router ospf'):
@@ -14,7 +27,7 @@ def check_ospf(net_connect, cmd='show run | inc router ospf'):
     output = net_connect.send_command_expect(cmd)
     return 'ospf' in output
 
-def remove_ospf_config(net_connect, cmd='no router ospf', as_number=''):
+def remove_ospf_config(net_connect, cmd='delete @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@', as_number=''):
     """Remove OSPF from the config"""
     ospf_cmd = "{} {}".format(cmd, str(as_number))
     cmd_list = [ospf_cmd]
@@ -34,7 +47,7 @@ def configure_ospf(net_connect, file_name=''):
         print "Error reading file: {}".format(file_name)
 
 def main():
-    device_list = [csrv2]
+    device_list = [srx1, srx2]
     print
 
     for a_device in device_list:
@@ -59,7 +72,7 @@ def main():
         #file_name = 'ospf_' + device_type.split("_ssh")[0] + '.txt'
 
         # Configure OSPF
-        ospfconfig1 = configure_ospf(net_connect, 'ospfcsrv2.txt')
+        ospfconfig1 = configure_ospf(net_connect, 'ospfsrx.txt')
         print ospfconfig1
         
 if __name__ == "__main__":
