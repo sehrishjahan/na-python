@@ -2,9 +2,6 @@ from datetime import datetime
 
 from netmiko import ConnectHandler
 import getpass
-
-#from devices import csrv, csrv2, csrv3
-
 csrv2 = {    
     'device_type': 'cisco_ios',
     'ip': '192.168.2.12',
@@ -63,7 +60,7 @@ def main():
         #file_name = 'ospf_' + device_type.split("_ssh")[0] + '.txt'
 
         # Configure OSPF
-        bgpconfig1 = configure_bgp(net_connect, 'csrv2ospf.txt')
-        print bgpconfig1
+        ospfconfig1 = configure_ospf(net_connect, 'csrv2ospf.txt')
+        print ospfconfig1
 if __name__ == "__main__":
     main()
