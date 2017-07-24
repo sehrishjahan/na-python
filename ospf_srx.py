@@ -44,8 +44,7 @@ def configure_ospf(net_connect, file_name=''):
         return output
     except IOError:
         print "Error reading file: {}".format(file_name)
-print "\n\n  * * * * * * * * * * *    CONFIGURING OSPF ON SRX1    * * * * * * * * * * *  \n"
-print "\n\n  * * * * * * * * * * *    CONFIGURING OSPF ON SRX1    * * * * * * * * * * *  \n"
+
 def main():
     device_list = [srx1, srx2]
     print
@@ -76,7 +75,7 @@ def main():
         print ospfconfig1
         output = net_connect.send_command("show route protocol ospf ")
         print output
-        
+ print "\n\n  * * * * * * * * * * *    CONFIGURING OSPF ON SRX1    * * * * * * * * * * *  \n"       
 if __name__ == "__main__":
     main()
     
