@@ -21,7 +21,7 @@ srx2 = {
      
 }
 
-def check_ospf(net_connect, cmd='show route'):
+def check_ospf(net_connect, cmd='show route protocol ospf'):
     """Check whether oospf is currently configured on device. Return boolean"""
     output = net_connect.send_command_expect(cmd)
     return 'ospf' in output
@@ -54,7 +54,7 @@ def main():
         as_number = 100
         net_connect = ConnectHandler(**a_device)
         
-        net_connect.configure()
+        net_connect.enable()
         #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
         if check_ospf(net_connect):
             print "  OSPF is currently configured !!!!!\n"
