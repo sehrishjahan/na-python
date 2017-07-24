@@ -54,7 +54,7 @@ def main():
         as_number = 100
         net_connect = ConnectHandler(**a_device)
         
-        net_connect.enable()
+        net_connect.configure()
         #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
         if check_ospf(net_connect):
             print "  OSPF is currently configured !!!!!\n"
