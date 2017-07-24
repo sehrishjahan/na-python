@@ -65,6 +65,6 @@ def main():
         # Configure OSPF
         ospfconfig1 = configure_ospf(net_connect, 'csrv2ospf.txt')
         print ospfconfig1
-         print "OSPF is now configured !!!!!"
+        
 if __name__ == "__main__":
     main()
