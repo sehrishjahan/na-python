@@ -21,7 +21,6 @@ srx2 = {
      
 }
 
-
 def check_ospf(net_connect, cmd='show route'):
     """Check whether oospf is currently configured on device. Return boolean"""
     output = net_connect.send_command_expect(cmd)
