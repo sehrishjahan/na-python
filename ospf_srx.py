@@ -75,7 +75,7 @@ def main():
         print ospfconfig1
         output = net_connect.send_command("show route protocol ospf ")
         print output
- print "\n\n  * * * * * * * * * * *    CONFIGURING OSPF ON SRX1    * * * * * * * * * * *  \n"       
+        print "\n\n  * * * * * * * * * * *    CONFIGURING OSPF ON SRX1    * * * * * * * * * * *  \n"       
 if __name__ == "__main__":
     main()
     
