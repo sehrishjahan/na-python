@@ -3,20 +3,20 @@ from datetime import datetime
 from netmiko import ConnectHandler
 import getpass
 
-#from devices import csrv2
+#from devices import csrv, csrv2, csrv3
 
-csrv = {    
+csrv2 = {    
     'device_type': 'cisco_ios',
-    'ip': '192.168.2.11',
-    'username': 'csrv',
-    'password': 'telnet',
-    'secret': 'cisco'
+    'ip': '192.168.2.12',
+    'username': 'cisco',
+    'password': 'cisco1234',
+    'secret': 'cisco1234'
 }
 
 def check_ospf(net_connect, cmd='show run | inc router ospf'):
-    """Check whether OSPF is currently configured on device. Return boolean"""
+    """Check whether oospf is currently configured on device. Return boolean"""
     output = net_connect.send_command_expect(cmd)
-    return 'ospf' in output
+    return 'bgp' in output
 
 def remove_ospf_config(net_connect, cmd='no router ospf', as_number=''):
     """Remove OSPF from the config"""
@@ -54,7 +54,7 @@ def main():
         else:
             print "No OSPF"
 
-        # Check ospf is now gone
+        # Check OSPF is now gone
         if check_ospf(net_connect):
             raise ValueError("OSPF configuration still detected")
 
@@ -62,9 +62,8 @@ def main():
         #device_type = net_connect.device_type
         #file_name = 'ospf_' + device_type.split("_ssh")[0] + '.txt'
 
-        # Configure OSPF
-        bgpconfig1 = configure_ospf(net_connect, 'csrv2ospf.txt')
+        # Configure BGP
+        bgpconfig1 = configure_bgp(net_connect, 'csrv2ospf.txt')
         print bgpconfig1
-  
 if __name__ == "__main__":
     main()
