@@ -48,7 +48,7 @@ def main():
         net_connect.enable()
         #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
         if check_ospf(net_connect):
-            print "OSPF currently configured"
+            print "OSPF currently configured !!!!!"
             remove_ospf_config(net_connect, as_number=as_number)
         else:
             print "No OSPF"
@@ -64,5 +64,6 @@ def main():
         # Configure OSPF
         ospfconfig1 = configure_ospf(net_connect, 'csrv2ospf.txt')
         print ospfconfig1
+         print "OSPF is now configured !!!!!"
 if __name__ == "__main__":
     main()
