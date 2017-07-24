@@ -27,7 +27,7 @@ def check_ospf(net_connect, cmd='show run | inc router ospf'):
     output = net_connect.send_command_expect(cmd)
     return 'ospf' in output
 
-def remove_ospf_config(net_connect, cmd='delete @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@', as_number=''):
+def remove_ospf_config(net_connect, cmd='delete set protocol ospf area 0.0.0.0 interface ge-0/0/1.0', as_number=''):
     """Remove OSPF from the config"""
     ospf_cmd = "{} {}".format(cmd, str(as_number))
     cmd_list = [ospf_cmd]
