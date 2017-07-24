@@ -3,7 +3,7 @@ from datetime import datetime
 from netmiko import ConnectHandler
 import getpass
 
-print "\n\n<<<<<<<<<<<<<<<<<<< CONFIGURING OSPF ON CSRv2>>>>>>>>>>>>>>>>>>\n\n"
+print "\n\n  * * * * * * * * * * * * * *    CONFIGURING OSPF ON CSRv2     * * * * * * * * * * * * * *\n"
 
 csrv2 = {    
     'device_type': 'cisco_ios',
