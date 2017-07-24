@@ -38,7 +38,7 @@ def configure_ospf(net_connect, file_name=''):
         print "Error reading file: {}".format(file_name)
 
 def main():
-    device_list = [csrv2]
+    device_list = [csrv3]
     print
 
     for a_device in device_list:
