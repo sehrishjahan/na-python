@@ -73,7 +73,7 @@ def main():
         # Configure OSPF
         ospfconfig1 = configure_ospf(net_connect, 'ospfsrx.txt')
         print ospfconfig1
-        output = net_connect.send_command("show configuration ")
+        output = net_connect.send_command("show route protocol ospf ")
         print output
         
 if __name__ == "__main__":
