@@ -63,7 +63,7 @@ def main():
         #file_name = 'bgp_' + device_type.split("_ssh")[0] + '.txt'
 
         # Configure BGP
-        bgpconfig1 = configure_bgp(net_connect, 'bgp_csrv.txt')
+        bgpconfig1 = configure_bgp(net_connect, 'bgp_csrv1.txt')
         print bgpconfig1
         
 if __name__ == "__main__":
