@@ -38,7 +38,7 @@ def configure_bgp(net_connect, file_name=''):
         print "Error reading file: {}".format(file_name)
 
 def main():
-    device_list = [csrv, csrv2]
+    device_list = [csrv]
     print
 
     for a_device in device_list:
@@ -64,9 +64,7 @@ def main():
 
         # Configure BGP
         bgpconfig1 = configure_bgp(net_connect, 'bgp_csrv.txt')
-        
         print bgpconfig1
-         
-
+        
 if __name__ == "__main__":
     main()
