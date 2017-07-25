@@ -6,27 +6,30 @@ import getpass
 #from devices import csrv, csrv2, csrv3
 
 csrv1 = {    
-    'device_name': 'csrv1',
+    'device_type': 'cisco_ios',
     'ip': '192.168.2.11',
     'username': 'csrv',
     'password': 'telnet',
-    'secret': 'cisco'
+    'secret': 'cisco',
+    'device_name': 'csrv2'
 }
 
 csrv2 = {    
-    'device_name': 'csrv2',
+    'device_type': 'cisco_ios',
     'ip': '192.168.2.12',
     'username': 'cisco',
     'password': 'cisco1234',
-    'secret': 'cisco1234'
+    'secret': 'cisco1234',
+    'device_name': 'csrv2'
 }
 
-csrv3 = {    
-    'device_name': 'csrv3',
+csrv3 = {   
+    'device_type': 'cisco_ios',
     'ip': '192.168.2.13',
     'username': 'cisco',
     'password': 'cisco1234',
-    'secret': 'cisco1234'
+    'secret': 'cisco1234',
+    'device_name': 'csrv3'
 }
 
 def check_bgp(net_connect, cmd='show run | inc router bgp'):
