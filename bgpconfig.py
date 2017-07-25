@@ -13,15 +13,6 @@ csrv = {
     'secret': 'cisco'
 }
 
-csrv2 = { 
-    'device_type': 'cisco_ios',
-    'ip': '192.168.2.12',
-    'username': 'cisco',
-    'password': 'cisco1234',
-    'secret': 'cisco1234'
-
-}
-
 def check_bgp(net_connect, cmd='show run | inc router bgp'):
     """Check whether BGP is currently configured on device. Return boolean"""
     output = net_connect.send_command_expect(cmd)
@@ -73,9 +64,9 @@ def main():
 
         # Configure BGP
         bgpconfig1 = configure_bgp(net_connect, 'bgp_csrv.txt')
-        bgpconfig2 = configure_bgp(net_connect, 'bgp_csrv2.txt')
+        
         print bgpconfig1
-        print bgpconfig2   
+         
 
 if __name__ == "__main__":
     main()
