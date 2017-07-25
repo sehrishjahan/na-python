@@ -60,6 +60,7 @@ def main():
 
     for a_device in device_list:
        # as_number = a_device.pop('as_number')
+        print a_device
         as_number = 100
         net_connect = ConnectHandler(**a_device)
         
