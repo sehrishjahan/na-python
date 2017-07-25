@@ -1,5 +1,5 @@
 router bgp 100
 no synchronization
 neighbor 192.168.1.12 remote-as 100
-neighbor 192.168.3.12 remote-as 100
+neighbor 192.168.3.12 remote-as 200
 
