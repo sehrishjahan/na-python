@@ -72,7 +72,7 @@ def main():
         else:
             print "No BGP"
         # Construct file name 
-        file_name = "bgp_" + ['ip'] + ".txt"
+        file_name = "bgp_" + str(a_device[0]['ip']) + ".txt"
         print file_name
         # Check BGP is now gone
         if check_bgp(net_connect):
