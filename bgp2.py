@@ -52,7 +52,7 @@ def main():
             print "BGP currently configured"
             remove_bgp_config(net_connect, as_number=as_number)
         else:
-            print "No BGP."
+            print "No BGP"
 
         # Check BGP is now gone
         if check_bgp(net_connect):
