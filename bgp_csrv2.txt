@@ -2,3 +2,5 @@ router bgp 100
 no synchronization
 redistribute ospf 100
 neighbor 192.168.1.11 remote-as 100
+router ospf 100
+redistribute bgp 100
