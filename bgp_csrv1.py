@@ -61,8 +61,10 @@ def main():
         # Construct file_name based on device_type
         #device_type = net_connect.device_type
         #file_name = 'bgp_' + device_type.split("_ssh")[0] + '.txt'
-
-        # Configure BGP
+ 
+       
+    
+    # Configure BGP
         bgpconfig1 = configure_bgp(net_connect, 'bgp_csrv1.txt')
         print bgpconfig1
         
