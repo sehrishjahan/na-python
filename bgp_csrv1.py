@@ -5,7 +5,7 @@ import getpass
 
 #from devices import csrv, csrv2, csrv3
 
-csrv = {    
+csrv1 = {    
     'device_type': 'cisco_ios',
     'ip': '192.168.2.11',
     'username': 'csrv',
@@ -54,8 +54,9 @@ def configure_bgp(net_connect, file_name=''):
         print "Error reading file: {}".format(file_name)
 
 def main():
-    device_list = [csrv, csrv2, csrv3]
-    print
+    device_list = [csrv1, csrv2, csrv3]
+#     file_list = ['bgp_csrv1.txt', 'bgp_csrv2.txt', 'bgp_csrv3.txt'] 
+    
 
     for a_device in device_list:
        # as_number = a_device.pop('as_number')
@@ -69,18 +70,19 @@ def main():
             remove_bgp_config(net_connect, as_number=as_number)
         else:
             print "No BGP"
-
+        # Construct file name 
+        file_name = "bgp_" + a_device + ".txt"
         # Check BGP is now gone
         if check_bgp(net_connect):
             raise ValueError("BGP configuration still detected")
     
     # Configure BGP
-        bgpconfig1 = configure_bgp(net_connect, 'bgp_csrv1.txt')
-        print bgpconfig1
-        bgpconfig2 = configure_bgp(net_connect, 'bgp_csrv2.txt')
-        print bgpconfig2
-        bgpconfig3 = configure_bgp(net_connect, 'bgp_csrv3.txt')
-        print bgpconfig3
+        bgpconfig = configure_bgp(net_connect, file_name)
+        print bgpconfig
+#         bgpconfig2 = configure_bgp(net_connect, 'bgp_csrv2.txt')
+#         print bgpconfig2
+#         bgpconfig3 = configure_bgp(net_connect, 'bgp_csrv3.txt')
+#         print bgpconfig3
         
 if __name__ == "__main__":
     main()
