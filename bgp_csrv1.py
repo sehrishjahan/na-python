@@ -6,7 +6,7 @@ import getpass
 #from devices import csrv, csrv2, csrv3
 
 csrv1 = {    
-    'device_type': 'cisco_ios',
+    'device_name': 'csrv1',
     'ip': '192.168.2.11',
     'username': 'csrv',
     'password': 'telnet',
@@ -14,7 +14,7 @@ csrv1 = {
 }
 
 csrv2 = {    
-    'device_type': 'cisco_ios',
+    'device_name': 'csrv2',
     'ip': '192.168.2.12',
     'username': 'cisco',
     'password': 'cisco1234',
@@ -22,7 +22,7 @@ csrv2 = {
 }
 
 csrv3 = {    
-    'device_type': 'cisco_ios',
+    'device_name': 'csrv3',
     'ip': '192.168.2.13',
     'username': 'cisco',
     'password': 'cisco1234',
@@ -72,7 +72,7 @@ def main():
         else:
             print "No BGP"
         # Construct file name 
-        file_name = "bgp_" + a_device[0][1] + ".txt"
+        file_name = "bgp_" + a_device[0]['device_name'] + ".txt"
         # Check BGP is now gone
         if check_bgp(net_connect):
             raise ValueError("BGP configuration still detected")
