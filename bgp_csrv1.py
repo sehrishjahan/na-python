@@ -11,7 +11,6 @@ csrv1 = {
     'username': 'csrv',
     'password': 'telnet',
     'secret': 'cisco',
-    'device_name': 'csrv2'
 }
 
 csrv2 = {    
@@ -20,7 +19,6 @@ csrv2 = {
     'username': 'cisco',
     'password': 'cisco1234',
     'secret': 'cisco1234',
-    'device_name': 'csrv2'
 }
 
 csrv3 = {   
@@ -29,7 +27,6 @@ csrv3 = {
     'username': 'cisco',
     'password': 'cisco1234',
     'secret': 'cisco1234',
-    'device_name': 'csrv3'
 }
 
 def check_bgp(net_connect, cmd='show run | inc router bgp'):
@@ -75,7 +72,8 @@ def main():
         else:
             print "No BGP"
         # Construct file name 
-        file_name = "bgp_" + a_device[0]['device_name'] + ".txt"
+        file_name = "bgp_" + a_device[0]['ip'] + ".txt"
+        print file_name
         # Check BGP is now gone
         if check_bgp(net_connect):
             raise ValueError("BGP configuration still detected")
