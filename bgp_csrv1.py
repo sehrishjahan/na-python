@@ -16,7 +16,7 @@ csrv = {
 csrv2 = {    
     'device_type': 'cisco_ios',
     'ip': '192.168.2.12',
-    'username': 'csrv2',
+    'username': 'cisco',
     'password': 'cisco1234',
     'secret': 'cisco1234'
 }
@@ -24,7 +24,7 @@ csrv2 = {
 csrv3 = {    
     'device_type': 'cisco_ios',
     'ip': '192.168.2.13',
-    'username': 'csrv3',
+    'username': 'cisco',
     'password': 'cisco1234',
     'secret': 'cisco1234'
 }
