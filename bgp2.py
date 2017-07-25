@@ -43,7 +43,7 @@ def main():
 
     for a_device in device_list:
        # as_number = a_device.pop('as_number')
-        as_number = 100
+        as_number = 200
         net_connect = ConnectHandler(**a_device)
         
         net_connect.enable()
