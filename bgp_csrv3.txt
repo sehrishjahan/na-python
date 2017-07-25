@@ -2,5 +2,7 @@ router bgp 200
 no synchronization
 redistribute ospf 100
 neighbor 192.168.3.11 remote-as 100
+do clear ip bgp *
+exit
 router ospf 100
 redistribute bgp 200
