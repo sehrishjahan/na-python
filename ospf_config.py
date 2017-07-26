@@ -12,11 +12,6 @@ def check_ospf(net_connect, cmd='show run | inc router ospf'):
     output = net_connect.send_command_expect(cmd)
     return 'ospf' in output
 
-def check_ospf_srx_config(net_connect, cmd='show route protocol ospf', process_id=''):
-    """Check whether OSPF is currently configured on device. Return boolean"""
-    output = net_connect.send_command_expect(cmd)
-    return 'ospf' in output
-
 def remove_ospf_config(net_connect, cmd='no router ospf', process_id=''):
     """Remove OSPF from the config"""
     ospf_cmd = "{} {}".format(cmd, str(process_id))
@@ -24,13 +19,6 @@ def remove_ospf_config(net_connect, cmd='no router ospf', process_id=''):
     output = net_connect.send_config_set(cmd_list)
    # if net_connect.device_type == 'cisco_ios':
     #    output += net_connect.commit()
-    print output
- 
-def remove_ospf_srx_config(net_connect, cmd='delete set protocol ospf area 0.0.0.0 interface ge-0/0/1.0', process_id=' '):
-    """Remove OSPF from the config"""
-    ospf_srx_cmd = "{} {}".format(cmd, str(process_id))
-    cmd_srx_list = [ospf_srx_cmd]
-    output = net_connect.send_config_set(cmd_srx_list)
     print output
 
 def configure_ospf(net_connect, file_name=''):
@@ -65,20 +53,7 @@ def main():
               remove_ospf_config(net_connect, process_id=process_id)
           else:
               print "\n         No OSPF"
-    for aa_device in device_list:
-       # as_number = aa_device.pop('process_id')
-        print a_device
-        process_id = 100
-        net_connect = ConnectHandler(**aa_device)
-        
-        
-           net_connect.enable()
-        #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
-           if check_srx_ospf(net_connect):
-                  print "\n         OSPF currently configured   \n"
-                  remove_ospf_srx_config(net_connect, process_id=process_id)
-           else:
-                  print "\n         No OSPF"
+   
         # Construct file name 
        
         # Check OSPF is now gone
