@@ -50,12 +50,12 @@ def main():
         else:
             print "No BGP"
         # Construct file name 
-       
+         file__name = "bgp_" + str(a_device ['ip']) + ".txt"
+        print file__name
         # Check BGP is now gone
         if check_bgp(net_connect):
             raise ValueError("BGP configuration still detected")
-        file_name = "bgp_" + str(a_device ['ip']) + ".txt"
-        print file_name
+      
     
     # Configure BGP
         bgpconfig = configure_bgp(net_connect, file_name)
