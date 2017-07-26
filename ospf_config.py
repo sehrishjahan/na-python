@@ -65,7 +65,7 @@ def main():
               remove_ospf_config(net_connect, process_id=process_id)
           else:
               print "\n         No OSPF"
-     for aa_device in device_list:
+    for aa_device in device_list:
        # as_number = aa_device.pop('process_id')
         print a_device
         process_id = 100
