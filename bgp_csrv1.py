@@ -1,33 +1,10 @@
 from datetime import datetime
 
 from netmiko import ConnectHandler
+from mydevices import cisco_ios, cisco_ios, cisco_ios
 import getpass
 
 #from devices import csrv, csrv2, csrv3
-
-csrv1 = {    
-    'device_type': 'cisco_ios',
-    'ip': '192.168.2.11',
-    'username': 'csrv',
-    'password': 'telnet',
-    'secret': 'cisco',
-}
-
-csrv2 = {    
-    'device_type': 'cisco_ios',
-    'ip': '192.168.2.12',
-    'username': 'cisco',
-    'password': 'cisco1234',
-    'secret': 'cisco1234',
-}
-
-csrv3 = {   
-    'device_type': 'cisco_ios',
-    'ip': '192.168.2.13',
-    'username': 'cisco',
-    'password': 'cisco1234',
-    'secret': 'cisco1234',
-}
 
 def check_bgp(net_connect, cmd='show run | inc router bgp'):
     """Check whether BGP is currently configured on device. Return boolean"""
@@ -55,6 +32,7 @@ def configure_bgp(net_connect, file_name=''):
 
 def main():
     device_list = [csrv1, csrv2, csrv3]
+    print
 #     file_list = ['bgp_csrv1.txt', 'bgp_csrv2.txt', 'bgp_csrv3.txt'] 
     
 
