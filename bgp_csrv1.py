@@ -54,12 +54,15 @@ def main():
         # Check BGP is now gone
         if check_bgp(net_connect):
             raise ValueError("BGP configuration still detected")
+            
+        device_type = net_connect.device_type
         file_name = "bgp_" + str(a_device ['ip']) + ".txt"
         print file_name
     
     # Configure BGP
         bgpconfig = configure_bgp(net_connect, file_name)
         print bgpconfig
+        print
 #         bgpconfig2 = configure_bgp(net_connect, 'bgp_csrv2.txt')
 #         print bgpconfig2
 #         bgpconfig3 = configure_bgp(net_connect, 'bgp_csrv3.txt')
