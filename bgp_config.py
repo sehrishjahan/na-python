@@ -46,7 +46,7 @@ def main():
         net_connect.enable()
         #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
         if check_bgp(net_connect):
-            print "\n      BGP currently configured"
+            print "\n      BGP currently configured   \n\n"
             remove_bgp_config(net_connect, as_number=as_number)
         else:
             print "\n       No BGP"
@@ -58,7 +58,7 @@ def main():
           
         device_type = net_connect.device_type
         file_name = "bgp_" + str(a_device ['ip']) + ".txt"
-        print file_name
+        print "{}".format(file_name)
     
     # Configure BGP
         bgpconfig = configure_bgp(net_connect, file_name)
