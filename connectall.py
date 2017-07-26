@@ -4,7 +4,7 @@ from netmiko import ConnectHandler
 from mydevices import srx1, srx2
 import getpass
 
-print "\n\n  * * * * * * * * * * *    CONFIGURING OSPF ON JUNIPER DEVICES    * * * * * * * * * * *  \n"
+print "\n\n * * * * * * * * * *    CONFIGURING OSPF ON JUNIPER DEVICES    * * * * * * * * *  \n"
 
 def check_ospf(net_connect, cmd='show route protocol ospf'):
     """Check whether oospf is currently configured on device. Return boolean"""
