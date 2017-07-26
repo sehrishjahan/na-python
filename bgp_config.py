@@ -70,5 +70,8 @@ def main():
 #         bgpconfig3 = configure_bgp(net_connect, 'bgp_csrv3.txt')
 #         print bgpconfig3
         
+    
+    print "Time elapsed: {}\n".format(datetime.now() - start_time)
+
 if __name__ == "__main__":
     main()
