@@ -21,12 +21,12 @@ def remove_ospf_config(net_connect, cmd='no router ospf', process_id=''):
     #    output += net_connect.commit()
     print output
 
-def check_ospf_srx_config(net_connect, cmd='show route protocol ospf', process_id=''):
+ def check_ospf_srx_config(net_connect, cmd='show route protocol ospf', process_id=''):
     """Check whether OSPF is currently configured on device. Return boolean"""
     output = net_connect.send_command_expect(cmd)
     return 'ospf' in output
 
-def remove_ospf_srx_config(net_connect, cmd='delete set protocol ospf area 0.0.0.0 interface ge-0/0/1.0', process_id=' '):
+ def remove_ospf_srx_config(net_connect, cmd='delete set protocol ospf area 0.0.0.0 interface ge-0/0/1.0', process_id=' '):
      """Remove OSPF from the config"""
     ospf_srx_cmd = "{} {}".format(cmd, str(process_id))
     cmd_srx_list = [ospf_srx_cmd]
