@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from netmiko import ConnectHandler
-from mydevices import cisco_ios, cisco_ios, cisco_ios
+from mydevices import csrv1, csrv2, csrv3
 import getpass
 
 #from devices import csrv, csrv2, csrv3
