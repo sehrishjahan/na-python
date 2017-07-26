@@ -56,11 +56,14 @@ def main():
         #file_name = 'ospf_' + device_type.split("_ssh")[0] + '.txt'
 
         # Configure OSPF
-        ospfconfig1 = configure_ospf(net_connect, 'ospf_192.168.2.14.txt')
-        print ospfconfig1
-        output = net_connect.send_command("show route protocol ospf ")
-        print output
-               
+       file_name = "bgp_" + str(a_device ['ip']) + ".txt"
+        print "\n  Reading file : "
+        print "  {}\n".format(file_name)
+    
+    # Configure BGP
+        bgpconfig = configure_bgp(net_connect, file_name)
+        print bgpconfig
+print
 if __name__ == "__main__":
     main()
     
