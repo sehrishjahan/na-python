@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from netmiko import ConnectHandler
-from mydevices import csrv1, csrv2, csrv3
+from mydevices import csrv2, csrv3
 import getpass
 
 #from devices import csrv, csrv2, csrv3
@@ -49,7 +49,7 @@ def main():
         #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
         if check_ospf(net_connect):
             print "\n         OSPF currently configured   \n"
-            remove_bgp_config(net_connect, as_number=as_number)
+            remove_bgp_config(net_connect, process_id=process_id)
         else:
             print "\n         No OSPF"
         # Construct file name 
@@ -76,4 +76,4 @@ def main():
     print "Time elapsed: {}\n".format(datetime.now() - start_time)
 
 if __name__ == "__main__":
-main()
+    main()
