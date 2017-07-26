@@ -32,7 +32,7 @@ def configure_bgp(net_connect, file_name=''):
 
 def main():
     device_list = [csrv1, csrv2, csrv3]
-    print "DFEGFDGHTHJRYGH"
+    print "\n\n   CONFIGURING BGP PROTOCOL \n"
     print 
 #     file_list = ['bgp_csrv1.txt', 'bgp_csrv2.txt', 'bgp_csrv3.txt'] 
     
