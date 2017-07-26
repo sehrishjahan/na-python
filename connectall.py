@@ -42,14 +42,14 @@ def main():
     for a_device in device_list:
        # as_number = a_device.pop('process_id')
         print a_device
-        process_id = 100
+       
         net_connect = ConnectHandler(**a_device)
         
         net_connect.enable()
         #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
         if check_ospf(net_connect):
               print "\n         OSPF currently configured   \n"
-              remove_ospf_config(net_connect, process_id=process_id)
+              remove_ospf_config(net_connect)
         else:
               print "\n         No OSPF"
    
