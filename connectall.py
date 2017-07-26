@@ -45,7 +45,7 @@ def main():
             print "  OSPF is currently configured !!!!!\n"
             remove_ospf_config(net_connect, as_number=as_number)
         else:
-            print "  No OSPF\n"
+            print "\n  No OSPF configured !!\n"
 
         # Check OSPF is now gone
         if check_ospf(net_connect):
