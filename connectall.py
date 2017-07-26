@@ -10,13 +10,6 @@ def check_ospf(net_connect, cmd='show run protocol ospf'):
     """Check whether OSPF is currently configured on device. Return boolean"""
     output = net_connect.send_command_expect(cmd)
     return 'ospf' in output
-
-def remove_ospf_config(net_connect, cmd='delete protocols ospf', process_id=''):
-    """Remove OSPF from the config"""
-    ospf_cmd = "{} {}".format(cmd, str(process_id))
-    ospf_c = net_connect.send_command('commit')
-    cmd_list = [ospf_cmd, ospf_c]
-    output = net_connect.send_config_set(cmd_list)
    
    # if net_connect.device_type == 'cisco_ios':
     #    output += net_connect.commit()
@@ -51,7 +44,7 @@ def main():
         #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
         if check_ospf(net_connect):
               print "\n         OSPF currently configured   \n"
-              remove_ospf_config(net_connect)
+              
         else:
               print "\n         No OSPF"
    
