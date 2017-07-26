@@ -36,7 +36,7 @@ def main():
     print 
     start_time = datetime.now()
     print
-#     file_list = ['bgp_csrv1.txt', 'bgp_csrv2.txt', 'bgp_csrv3.txt'] 
+#     file_list = ['ospf_csrv1.txt', 'ospf_csrv2.txt', 'ospf_csrv3.txt'] 
     
 
     for a_device in device_list:
@@ -54,7 +54,7 @@ def main():
             print "\n         No OSPF"
         # Construct file name 
        
-        # Check BGP is now gone
+        # Check OSPF is now gone
         if check_ospf(net_connect):
             raise ValueError("OSPF configuration still detected")
           
