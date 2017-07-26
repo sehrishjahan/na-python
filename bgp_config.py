@@ -33,7 +33,6 @@ def configure_bgp(net_connect, file_name=''):
 def main():
     device_list = [csrv1, csrv2, csrv3]
     print "\n              CONFIGURING BGP PROTOCOL   "
-    print " _________________________________________________\n"
     print 
 #     file_list = ['bgp_csrv1.txt', 'bgp_csrv2.txt', 'bgp_csrv3.txt'] 
     
@@ -47,10 +46,10 @@ def main():
         net_connect.enable()
         #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
         if check_bgp(net_connect):
-            print "\n      BGP currently configured   \n"
+            print "\n         BGP currently configured   \n"
             remove_bgp_config(net_connect, as_number=as_number)
         else:
-            print "\n       No BGP"
+            print "\n         No BGP"
         # Construct file name 
        
         # Check BGP is now gone
@@ -59,8 +58,8 @@ def main():
           
         device_type = net_connect.device_type
         file_name = "bgp_" + str(a_device ['ip']) + ".txt"
-        print "\n Reading file "
-        print " {}\n".format(file_name)
+        print "\n  Reading file : "
+        print "  {}\n".format(file_name)
     
     # Configure BGP
         bgpconfig = configure_bgp(net_connect, file_name)
