@@ -12,7 +12,7 @@ def check_ospf(net_connect, cmd='show run | inc router ospf'):
     output = net_connect.send_command_expect(cmd)
     return 'ospf' in output
 
-def remove_bgp_config(net_connect, cmd='no router ospf', process_id=''):
+def remove_ospf_config(net_connect, cmd='no router ospf', process_id=''):
     """Remove OSPF from the config"""
     ospf_cmd = "{} {}".format(cmd, str(process_id))
     cmd_list = [ospf_cmd]
@@ -20,6 +20,13 @@ def remove_bgp_config(net_connect, cmd='no router ospf', process_id=''):
    # if net_connect.device_type == 'cisco_ios':
     #    output += net_connect.commit()
     print output
+
+def check_ospf_srx_config(net_connect,cmd='show route protocol ospf'):
+    """Check whether OSPF is currently configured on device. Return boolean"""
+    output = net_connect.send_command_expect(cmd)
+    return 'ospf' in output
+
+def remove_ospf_srx_config(net_connect, cmd=' 
 
 def configure_ospf(net_connect, file_name=''):
     """Configure OSPF on device."""
