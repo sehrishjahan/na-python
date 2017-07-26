@@ -32,7 +32,7 @@ def configure_ospf(net_connect, file_name=''):
         print "Error reading file: {}".format(file_name)
 
 def main():
-    device_list = [csrv2, csrv3, srx1, srx2]
+    device_list = [csrv2, csrv3,]
     print "\n              CONFIGURING OSPF PROTOCOL   "
     print 
     start_time = datetime.now()
