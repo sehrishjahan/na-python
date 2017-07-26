@@ -1,10 +1,25 @@
 from datetime import datetime
 
 from netmiko import ConnectHandler
-from mydevices import srx1, srx2
 import getpass
 
 print "\n\n  * * * * * * * * * * *    CONFIGURING OSPF ON SRX1    * * * * * * * * * * *  \n"
+
+srx1 = {    
+    'device_type': 'juniper',
+    'ip': '192.168.2.14',
+    'username': 'juniper',
+    'password': 'cisco1234',
+     
+}
+
+srx2 = {    
+    'device_type': 'juniper',
+    'ip': '192.168.2.15',
+    'username': 'juniper',
+    'password': 'cisco1234',
+     
+}
 
 def check_ospf(net_connect, cmd='show route protocol ospf'):
     """Check whether oospf is currently configured on device. Return boolean"""
@@ -56,15 +71,11 @@ def main():
         #file_name = 'ospf_' + device_type.split("_ssh")[0] + '.txt'
 
         # Configure OSPF
-       device_type = net_connect.device_type
-       file_name = "bgp_" + str(a_device ['ip']) + ".txt"
-       print "\n  Reading file : "
-       print "  {}\n".format(file_name)
-    
-    # Configure BGP
-       bgpconfig = configure_bgp(net_connect, file_name)
-       print bgpconfig
-       print
+        ospfconfig1 = configure_ospf(net_connect, 'ospf_srx.txt')
+        print ospfconfig1
+        output = net_connect.send_command("show route protocol ospf ")
+        print output
+               
 if __name__ == "__main__":
     main()
     
