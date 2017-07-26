@@ -55,7 +55,7 @@ def main():
         # Construct file name 
        
         # Check BGP is now gone
-        if check_bgp(net_connect):
+        if check_ospf(net_connect):
             raise ValueError("OSPF configuration still detected")
           
         device_type = net_connect.device_type
