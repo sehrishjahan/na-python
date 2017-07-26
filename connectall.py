@@ -31,16 +31,11 @@ def main():
     print 
     start_time = datetime.now()
     print
-#     file_list = ['ospf_csrv1.txt', 'ospf_csrv2.txt', 'ospf_csrv3.txt'] 
-    
-
-    
-   
-        # Construct file name 
+ # Construct file name 
        
         # Check OSPF is now gone
-        if check_ospf(net_connect):
-            raise ValueError("OSPF configuration still detected")
+ if check_ospf(net_connect):
+         raise ValueError("OSPF configuration still detected")
           
         device_type = net_connect.device_type
         file_name = "ospf_" + str(a_device ['ip']) + ".txt"
