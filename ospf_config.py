@@ -28,7 +28,7 @@ def check_ospf_srx_config(net_connect, cmd='show route protocol ospf', process_i
 
 def remove_ospf_srx_config(net_connect, cmd='delete set protocol ospf area 0.0.0.0 interface ge-0/0/1.0', process_id=' '):
      """Remove OSPF from the config"""
-   ospf_srx_cmd = "{} {}".format(cmd, str(process_id))
+    ospf_srx_cmd = "{} {}".format(cmd, str(process_id))
     cmd_srx_list = [ospf_srx_cmd]
     output = net_connect.send_config_set(cmd_srx_list)
     print output
