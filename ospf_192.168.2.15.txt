@@ -1,3 +1,0 @@
-set routing-options router-id 15.15.15.15
-set protocols ospf area 0.0.0.0 interface ge-0/0/1.0
-commit
