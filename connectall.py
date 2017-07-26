@@ -11,12 +11,12 @@ def check_ospf(net_connect, cmd='show run protocol ospf'):
     output = net_connect.send_command_expect(cmd)
     return 'ospf' in output
 
-def remove_ospf_config(net_connect, cmd='delete protocols ospf', process_id=''):
+def remove_ospf_config(net_connect, cmd='delete protocols ospf','commit', process_id=''):
     """Remove OSPF from the config"""
     ospf_cmd = "{} {}".format(cmd, str(process_id))
     cmd_list = [ospf_cmd]
     output = net_connect.send_config_set(cmd_list)
-    output = net_connect.send_command("commit")
+   
    # if net_connect.device_type == 'cisco_ios':
     #    output += net_connect.commit()
     print output
