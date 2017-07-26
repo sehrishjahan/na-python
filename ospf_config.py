@@ -67,12 +67,12 @@ def main():
         else:
             print "\n         No OSPF"
             
-         net_connect.enable()
+      net_connect.enable()
         #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
-        if check_srx_ospf(net_connect):
+      if check_srx_ospf(net_connect):
             print "\n         OSPF currently configured   \n"
             remove_ospf_srx_config(net_connect, process_id=process_id)
-        else:
+      else:
             print "\n         No OSPF"
         # Construct file name 
        
