@@ -32,8 +32,8 @@ def configure_bgp(net_connect, file_name=''):
 
 def main():
     device_list = [csrv1, csrv2, csrv3]
-    print "\n        CONFIGURING BGP PROTOCOL   "
-    print " _________________________________________\n"
+    print "\n              CONFIGURING BGP PROTOCOL   "
+    print " _________________________________________________\n"
     print 
 #     file_list = ['bgp_csrv1.txt', 'bgp_csrv2.txt', 'bgp_csrv3.txt'] 
     
@@ -60,7 +60,7 @@ def main():
         device_type = net_connect.device_type
         file_name = "bgp_" + str(a_device ['ip']) + ".txt"
         print "\n Reading file"
-        print "{}".format(file_name)
+        print "          {}\n".format(file_name)
     
     # Configure BGP
         bgpconfig = configure_bgp(net_connect, file_name)
