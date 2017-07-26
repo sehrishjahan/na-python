@@ -56,7 +56,7 @@ def main():
         #file_name = 'ospf_' + device_type.split("_ssh")[0] + '.txt'
 
         # Configure OSPF
-        ospfconfig1 = configure_ospf(net_connect, 'ospf_srx.txt')
+        ospfconfig1 = configure_ospf(net_connect, 'ospf_192.168.2.14.txt')
         print ospfconfig1
         output = net_connect.send_command("show route protocol ospf ")
         print output
