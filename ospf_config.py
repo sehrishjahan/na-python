@@ -46,7 +46,7 @@ def main():
         process_id = 100
         net_connect = ConnectHandler(**a_device)
         
-          net_connect.enable()
+        net_connect.enable()
         #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
           if check_ospf(net_connect):
               print "\n         OSPF currently configured   \n"
