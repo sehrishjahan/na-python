@@ -25,7 +25,6 @@ def remove_ospf_config(net_connect, cmd='no router ospf', process_id=''):
    # if net_connect.device_type == 'cisco_ios':
     #    output += net_connect.commit()
     print output
-
  
 def remove_ospf_srx_config(net_connect, cmd='delete set protocol ospf area 0.0.0.0 interface ge-0/0/1.0', process_id=' '):
     """Remove OSPF from the config"""
@@ -67,13 +66,13 @@ def main():
         else:
             print "\n         No OSPF"
             
-      net_connect.enable()
+              net_connect.enable()
         #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
-      if check_srx_ospf(net_connect):
-            print "\n         OSPF currently configured   \n"
-            remove_ospf_srx_config(net_connect, process_id=process_id)
-      else:
-            print "\n         No OSPF"
+              if check_srx_ospf(net_connect):
+                  print "\n         OSPF currently configured   \n"
+                  remove_ospf_srx_config(net_connect, process_id=process_id)
+              else:
+                  print "\n         No OSPF"
         # Construct file name 
        
         # Check OSPF is now gone
