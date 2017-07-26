@@ -56,7 +56,7 @@ def main():
         print a_device
         process_id = 100
         net_connect = ConnectHandler(**a_device)
-        
+      
         net_connect.enable()
         #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
         if check_ospf(net_connect):
@@ -71,7 +71,7 @@ def main():
         if check_ospf(net_connect):
             raise ValueError("OSPF configuration still detected")
            
-     for aa_device in device_list:
+    for aa_device in device_list:
        # as_number = a_device.pop('process_id')
         print a_device
         process_id = 100
