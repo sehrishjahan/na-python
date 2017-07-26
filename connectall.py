@@ -45,7 +45,7 @@ def main():
             print "  OSPF is currently configured !!!!!\n"
             remove_ospf_config(net_connect, as_number=as_number)
         else:
-            print "No OSPF"
+            print "  No OSPF\n"
 
         # Check OSPF is now gone
         if check_ospf(net_connect):
@@ -57,10 +57,7 @@ def main():
 
         # Configure OSPF
         ospfconfig1 = configure_ospf(net_connect, 'ospf_srx.txt')
-        print ospfconfig1
-        output = net_connect.send_command("show route protocol ospf ")
-        print output
-               
+        print ospfconfig1             
 if __name__ == "__main__":
     main()
     
