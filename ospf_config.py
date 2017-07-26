@@ -48,10 +48,10 @@ def main():
         
         net_connect.enable()
         #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
-          if check_ospf(net_connect):
+        if check_ospf(net_connect):
               print "\n         OSPF currently configured   \n"
               remove_ospf_config(net_connect, process_id=process_id)
-          else:
+        else:
               print "\n         No OSPF"
    
         # Construct file name 
