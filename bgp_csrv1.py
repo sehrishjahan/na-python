@@ -16,7 +16,7 @@ def remove_bgp_config(net_connect, cmd='no router bgp', as_number=''):
     bgp_cmd = "{} {}".format(cmd, str(as_number))
     cmd_list = [bgp_cmd]
     output = net_connect.send_config_set(cmd_list)
-    if net_connect.device_type == 'cisco_xr_ssh':
+    if net_connect.device_type == 'cisco_ios':
         output += net_connect.commit()
     print output
 
