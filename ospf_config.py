@@ -26,7 +26,12 @@ def check_ospf_srx_config(net_connect,cmd='show route protocol ospf'):
     output = net_connect.send_command_expect(cmd)
     return 'ospf' in output
 
-def remove_ospf_srx_config(net_connect, cmd=' 
+def remove_ospf_srx_config(net_connect, cmd='delete set protocol ospf area 0.0.0.0 interface ge-0/0/1.0','commit', process_id=' '):
+     """Remove OSPF from the config"""
+    ospf_srx_cmd = "{} {}".format(cmd, str(process_id))
+    cmd_srx_list = [ospf_srx_cmd]
+    output = net_connect.send_config_set(cmd_srx_list)
+    print output
 
 def configure_ospf(net_connect, file_name=''):
     """Configure OSPF on device."""
@@ -57,7 +62,7 @@ def main():
         #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
         if check_ospf(net_connect):
             print "\n         OSPF currently configured   \n"
-            remove_bgp_config(net_connect, process_id=process_id)
+            remove_ospf_config(net_connect, process_id=process_id)
         else:
             print "\n         No OSPF"
         # Construct file name 
