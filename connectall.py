@@ -58,13 +58,13 @@ def main():
         # Configure OSPF
        device_type = net_connect.device_type
        file_name = "bgp_" + str(a_device ['ip']) + ".txt"
-        print "\n  Reading file : "
-        print "  {}\n".format(file_name)
+       print "\n  Reading file : "
+       print "  {}\n".format(file_name)
     
     # Configure BGP
-        bgpconfig = configure_bgp(net_connect, file_name)
-        print bgpconfig
-print
+       bgpconfig = configure_bgp(net_connect, file_name)
+       print bgpconfig
+       print
 if __name__ == "__main__":
     main()
     
