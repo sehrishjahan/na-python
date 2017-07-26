@@ -1,23 +1,17 @@
 from datetime import datetime
 
 from netmiko import ConnectHandler
-from mydevices import csrv2, csrv3
-from mysrx import srx1, srx2
+from mydevices import srx1, srx2
 import getpass
 
-#from devices import csrv2, csrv3
+#from devices import srx1, srx2
 
-def check_ospf(net_connect, cmd='show run | inc router ospf'):
-    """Check whether OSPF is currently configured on device. Return boolean"""
-    output = net_connect.send_command_expect(cmd)
-    return 'ospf' in output
-  
-def check_srx_ospf(net_connect, cmd='show run protocol ospf'):
+def check_ospf(net_connect, cmd='show run protocol ospf'):
     """Check whether OSPF is currently configured on device. Return boolean"""
     output = net_connect.send_command_expect(cmd)
     return 'ospf' in output
 
-def remove_ospf_config(net_connect, cmd='no router ospf', process_id=''):
+def remove_ospf_config(net_connect, cmd='delete set ', process_id=''):
     """Remove OSPF from the config"""
     ospf_cmd = "{} {}".format(cmd, str(process_id))
     cmd_list = [ospf_cmd]
@@ -25,13 +19,7 @@ def remove_ospf_config(net_connect, cmd='no router ospf', process_id=''):
    # if net_connect.device_type == 'cisco_ios':
     #    output += net_connect.commit()
     print output
-    
-def remove_srx_ospf_config(net_connect, cmd='no router ospf', process_id=''):
-    """Remove OSPF from the config"""
-    ospf_srx_cmd = "{} {}".format(cmd, str(process_id))
-    cmd_srx_list = [ospf_srx_cmd]
-    output = net_connect.send_config_set(cmd_srx_list)
-    
+
 def configure_ospf(net_connect, file_name=''):
     """Configure OSPF on device."""
     try:
@@ -43,7 +31,7 @@ def configure_ospf(net_connect, file_name=''):
         print "Error reading file: {}".format(file_name)
 
 def main():
-    device_list = [csrv2, csrv3, srx1, srx2]
+    device_list = [csrv2, csrv3,]
     print "\n              CONFIGURING OSPF PROTOCOL   "
     print 
     start_time = datetime.now()
@@ -56,7 +44,7 @@ def main():
         print a_device
         process_id = 100
         net_connect = ConnectHandler(**a_device)
-      
+        
         net_connect.enable()
         #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
         if check_ospf(net_connect):
@@ -69,26 +57,6 @@ def main():
        
         # Check OSPF is now gone
         if check_ospf(net_connect):
-            raise ValueError("OSPF configuration still detected")
-           
-    for aa_device in device_list:
-       # as_number = a_device.pop('process_id')
-        print a_device
-        process_id = 100
-        net_connect = ConnectHandler(**aa_device)
-        
-        net_connect.enable()
-        #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
-        if check_srx_ospf(net_connect):
-              print "\n         OSPF currently configured   \n"
-              remove_srx_ospf_config(net_connect, process_id=process_id)
-        else:
-              print "\n         No OSPF"
-   
-        # Construct file name 
-       
-        # Check OSPF is now gone
-        if check_srx_ospf(net_connect):
             raise ValueError("OSPF configuration still detected")
           
         device_type = net_connect.device_type
