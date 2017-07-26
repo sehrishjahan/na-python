@@ -2,7 +2,6 @@ from datetime import datetime
 
 from netmiko import ConnectHandler
 from mydevices import csrv2, csrv3
-from mysrx import srx1, srx2
 import getpass
 
 #from devices import csrv2, csrv3
