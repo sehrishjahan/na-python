@@ -33,6 +33,7 @@ def configure_bgp(net_connect, file_name=''):
 def main():
     device_list = [csrv1, csrv2, csrv3]
     print
+    print "Configuring bgp obn csrv"
 #     file_list = ['bgp_csrv1.txt', 'bgp_csrv2.txt', 'bgp_csrv3.txt'] 
     
 
@@ -54,7 +55,7 @@ def main():
         # Check BGP is now gone
         if check_bgp(net_connect):
             raise ValueError("BGP configuration still detected")
-       print "CONFIGURING BGP ON CSRV"     
+          
         device_type = net_connect.device_type
         file_name = "bgp_" + str(a_device ['ip']) + ".txt"
         print file_name
