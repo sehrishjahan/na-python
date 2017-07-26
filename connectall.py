@@ -11,7 +11,7 @@ def check_ospf(net_connect, cmd='show run protocol ospf'):
     output = net_connect.send_command_expect(cmd)
     return 'ospf' in output
 
-def remove_ospf_config(net_connect, cmd='set protocol ospf area 0.0.0.0 interface ge-0/0/1.0', process_id=''):
+def remove_ospf_config(net_connect, cmd='delete protocols ospf', process_id=''):
     """Remove OSPF from the config"""
     ospf_cmd = "{} {}".format(cmd, str(process_id))
     cmd_list = [ospf_cmd]
