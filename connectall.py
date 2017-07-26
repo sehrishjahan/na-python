@@ -34,19 +34,7 @@ def main():
 #     file_list = ['ospf_csrv1.txt', 'ospf_csrv2.txt', 'ospf_csrv3.txt'] 
     
 
-    for a_device in device_list:
-       # as_number = a_device.pop('process_id')
-        print a_device
-       
-        net_connect = ConnectHandler(**a_device)
-        
-        net_connect.enable()
-        #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
-        if check_ospf(net_connect):
-              print "\n         OSPF currently configured   \n"
-              
-        else:
-              print "\n         No OSPF"
+    
    
         # Construct file name 
        
