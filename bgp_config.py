@@ -54,7 +54,7 @@ def main():
         # Check BGP is now gone
         if check_bgp(net_connect):
             raise ValueError("BGP configuration still detected")
-            
+       print "CONFIGURING BGP ON CSRV"     
         device_type = net_connect.device_type
         file_name = "bgp_" + str(a_device ['ip']) + ".txt"
         print file_name
