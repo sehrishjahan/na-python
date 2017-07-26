@@ -4,7 +4,7 @@ from netmiko import ConnectHandler
 from mydevices import csrv2, csrv3
 import getpass
 
-#from devices import csrv, csrv2, csrv3
+#from devices import csrv2, csrv3
 
 def check_ospf(net_connect, cmd='show run | inc router ospf'):
     """Check whether OSPF is currently configured on device. Return boolean"""
@@ -31,7 +31,7 @@ def configure_ospf(net_connect, file_name=''):
         print "Error reading file: {}".format(file_name)
 
 def main():
-    device_list = [csrv1, csrv2, csrv3]
+    device_list = [csrv2, csrv3]
     print "\n              CONFIGURING OSPF PROTOCOL   "
     print 
     start_time = datetime.now()
