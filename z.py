@@ -1,4 +1,4 @@
-scapy
+
 print sniff.__doc__
 import logging
 import subprocess
