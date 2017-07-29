@@ -56,7 +56,7 @@ def main():
         #file_name = 'ospf_' + device_type.split("_ssh")[0] + '.txt'
 
         # Configure OSPF
-        ospfconfig1 = configure_ospf(net_connect, 'ospf_srx.txt')
+        ospfconfig1 = configure_ospf(net_connect, 'ospf_srx1.txt')
         print ospfconfig1             
 if __name__ == "__main__":
     main()
