@@ -1,0 +1,3 @@
+set system snmp comunity cisco1234
+set system snmp location "JuniperSRX, Toronto, ON, CA"
+set system snmp contact "rajwinder.kaur@ryerson.ca"
