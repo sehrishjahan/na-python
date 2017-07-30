@@ -1,0 +1,7 @@
+sudo ./add_device.php 192.168.2.12 cisco1234 v2c
+sudo ./add_device.php 192.168.2.11 cisco1234 v2c
+sudo ./add_device.php 192.168.2.13 cisco1234 v2c
+sudo ./add_device.php 192.168.2.14 cisco1234 v2c
+sudo ./add_device.php 192.168.2.15 cisco1234 v2c
+sudo ./discovery.php -h all
+sudo ./poller.php -h all
