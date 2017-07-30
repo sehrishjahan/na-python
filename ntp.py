@@ -26,7 +26,7 @@ def main():
        
          
         device_type = net_connect.device_type
-        file_name = "ntp_" + str(a_device ['ip']) + ".txt"
+        file_name = "ntp_" + (a_device ['username']) + ".txt"
         print "\n  Reading file : "
         print "  {}\n".format(file_name)
     
