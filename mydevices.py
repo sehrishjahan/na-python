@@ -3,7 +3,7 @@ csrv1 = {
     'device_type': 'cisco_ios',
     'ip': '192.168.2.11',
     'username': 'csrv1',
-    'password': 'telnet',
+    'password': 'cisco1234',
     'secret': 'cisco1234',
 }
 
