@@ -2,8 +2,6 @@ from netmiko import ConnectHandler
 from mydevices import srx1,srx2
 import getpass
 
-#from devices import csrv, csrv2, csrv3
-
 def configure_ntp(net_connect, file_name=''):
     """Configure NTP on device."""
     try:
@@ -16,14 +14,11 @@ def main():
     device_list = [srx1, srx2]
     print "\n              CONFIGURING NTP PROTOCOL   "
     print 
-#     file_list = ['bgp_csrv1.txt', 'bgp_csrv2.txt', 'bgp_csrv3.txt'] 
   
     for a_device in device_list:
         net_connect = ConnectHandler(**a_device)
         
         net_connect.enable()
-        #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt()
-       
          
         device_type = net_connect.device_type
         file_name = "ntp_" + (a_device ['username']) + ".txt"
@@ -35,7 +30,7 @@ def main():
         print ntpconfig
         print
         print"\n    CLOCK TIMING"
-        output = net_connect.send_command("show clock")
+        output = net_connect.send_command("run show system uptime | match current")
         print output
 
 if __name__ == "__main__":
