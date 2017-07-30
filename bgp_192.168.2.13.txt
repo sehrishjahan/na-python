@@ -1,10 +1,8 @@
 ip route 0.0.0.0 0.0.0.0 192.168.3.11
 router bgp 100
 no synchronization
-redistribute ospf 100 match internal external 1 external 2
 network 192.168.3.0
 neighbor 192.168.3.11 remote-as 100
+redistribute ospf 100 match internal external 1 external 2
 exit
 do clear ip bgp *
-router ospf 100
-redistribute bgp 100 metric 10 subnets
