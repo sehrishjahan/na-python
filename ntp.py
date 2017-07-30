@@ -18,7 +18,7 @@ def main():
     print 
 #     file_list = ['bgp_csrv1.txt', 'bgp_csrv2.txt', 'bgp_csrv3.txt'] 
   
-  for a_device in device_list:
+     for a_device in device_list:
         net_connect = ConnectHandler(**a_device)
         
         net_connect.enable()
