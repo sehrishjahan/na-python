@@ -34,6 +34,8 @@ def main():
         ntpconfig = configure_ntp(net_connect, file_name)
         print ntpconfig
         print
+        output = net_connect.send_command("show clock")
+        print output
 
 if __name__ == "__main__":
   main()
