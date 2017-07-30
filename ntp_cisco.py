@@ -3,6 +3,7 @@ from mydevices import csrv1, csrv2, csrv3
 import getpass
 
 #from devices import csrv, csrv2, csrv3
+print "\n\n  * * * * * * * * * * *    CONFIGURING NTP ON CISCO ROUTERS     * * * * * * * * * * *  \n"
 
 def configure_ntp(net_connect, file_name=''):
     """Configure NTP on device."""
