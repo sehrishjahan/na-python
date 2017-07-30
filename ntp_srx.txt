@@ -2,4 +2,4 @@ set system ntp server 192.168.2.105
 commit
 run show ntp status
 run show ntp associations
-show system uptime | match current
+run show system uptime | match current
