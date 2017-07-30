@@ -1,4 +1,4 @@
 ntp server 192.168.2.105
 do show ntp status
-do show ntp assoiations
+do show ntp associations
 do show clock
