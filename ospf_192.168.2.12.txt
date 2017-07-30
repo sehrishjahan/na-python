@@ -1,7 +1,4 @@
 router ospf 100
 router-id 2.2.2.2
-passive-interface GigabitEthernet3
-redistribute bgp 100 subnets
-network 192.168.1.0 0.0.0.255 area 0
+redistribute bgp 100 metric 10 subnets
 network 192.168.4.0 0.0.0.255 area 0
-
