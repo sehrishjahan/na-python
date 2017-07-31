@@ -1,5 +1,5 @@
 from netmiko import ConnectHandler
-from mydevices import srx1, sxr2
+from mydevices import srx1, srx2
 import getpass
 
 #from devices import srx1, srx2
