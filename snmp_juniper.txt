@@ -1,3 +1,3 @@
-set snmp comunity cisco1234
+set snmp community cisco1234
 set snmp location "JuniperSRX, Toronto, ON, CA"
 set snmp contact "rajwinder.kaur@ryerson.ca"
