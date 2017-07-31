@@ -37,4 +37,4 @@ def main():
 if __name__ == "__main__":
   main()
 
-print "\n\n  * * * * * * * * * * *    SNMP SUCCESSFULLY CONFIGURED    * * * * * * * * * * *  \n
+  print "\n\n  * * * * * * * * * * *    SNMP SUCCESSFULLY CONFIGURED    * * * * * * * * * * *  \n
