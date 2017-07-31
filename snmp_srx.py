@@ -13,7 +13,7 @@ def configure_snmp(net_connect, file_name=''):
         print "Error reading file: {}".format(file_name)
 
 def main():
-    device_list = [csrv1, csrv2, csrv3]
+    device_list = [srx1, srx2]
     print "\n              CONFIGURING SNMP PROTOCOL   "
     print 
   
