@@ -4,7 +4,7 @@ import getpass
 
 #from devices import csrv, csrv2, csrv3
 
-def configure_ntp(net_connect, file_name=''):
+def configure_snmp(net_connect, file_name=''):
     """Configure SNMP on device."""
     try:
         output = net_connect.send_config_from_file(config_file=file_name)
@@ -31,14 +31,11 @@ def main():
         print "  {}\n".format(file_name)
     
     # Configure NTP
-        ntpconfig = configure_ntp(net_connect, file_name)
-        print ntpconfig
+        snmpconfig = configure_snmp(net_connect, file_name)
+        print snmpconfig
         print
-        print"\n    CLOCK TIMING"
-        output = net_connect.send_command("show clock")
-        print output
 
 if __name__ == "__main__":
   main()
 
-print "\n\n  * * * * * * * * * * *    NTP SUCCESSFULLY CONFIGURED    * * * * * * * * * * *  \n"
+print "\n\n  * * * * * * * * * * *    SNMP SUCCESSFULLY CONFIGURED    * * * * * * * * * * *  \n"
