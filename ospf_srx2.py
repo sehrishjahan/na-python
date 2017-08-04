@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from netmiko import ConnectHandler
-from mydevices import srx1, srx2
+from mydevices import srx2
 import getpass
 
 print "\n\n * * * * * * * * * *    CONFIGURING OSPF ON JUNIPER DEVICES    * * * * * * * * *  \n"
@@ -31,7 +31,7 @@ def configure_ospf(net_connect, file_name=''):
         print "Error reading file: {}".format(file_name)
 
 def main():
-    device_list = [srx1, srx2]
+    device_list = [srx2]
     print
 
     for a_device in device_list:
