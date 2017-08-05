@@ -1,5 +1,4 @@
 import jnpr.junos
-print jnpr.junos
 from jnpr.junos.device import Device
 if __name__ == '__main__':
      junos_hosts = ['192.168.2.14']
