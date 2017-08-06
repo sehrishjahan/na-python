@@ -7,9 +7,9 @@ def check_ospf(net_connect, cmd='show run | inc router bgp'):
     output = net_connect.send_command_expect(cmd)
     return 'bpp' in output
 
-def remove_bgp_config(net_connect, cmd='no router ospf', process_id=''):
+def remove_bgp_config(net_connect, cmd='no router bgp', as_number=''):
     """Remove OSPF from the config"""
-    bgp_cmd = "{} {}".format(cmd, str(process_id))
+    bgp_cmd = "{} {}".format(cmd, str(as_number))
     cmd_list = [bgp_cmd]
     output = net_connect.send_config_set(cmd_list)
     print output
