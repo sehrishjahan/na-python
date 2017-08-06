@@ -24,8 +24,6 @@ def main():
         
          net_connect.enable()
         #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt()       
-         
-         net_connect.enable() 
          device_type = net_connect.device_type
          file_name = "ntp_" + (a_device ['username']) + ".txt"
          print "\n  Reading file : "
