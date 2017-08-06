@@ -1,5 +1,5 @@
 from netmiko import ConnectHandler
-from mydevices import csrv1, csrv2, csrv3
+from mydevices import srx1,srx2
 import getpass
 def configure_ntp(net_connect, file_name=''):
     """Configure NTP on device."""
@@ -10,7 +10,7 @@ def configure_ntp(net_connect, file_name=''):
         print "Error reading file: {}".format(file_name)
 
 def main():
-    device_list = [csrv1, csrv2, csrv3]
+    device_list = [srx1, srx2]
     print "\n              CONFIGURING NTP PROTOCOL   "
     print 
   
@@ -26,11 +26,10 @@ def main():
         print ntpconfig
         print
         print"\n    CLOCK TIMING"
-        output = net_connect.send_command("show clock")
+        output = net_connect.send_command("show system uptime | match current")
         print output
-
 
 if __name__ == "__main__":
   main()
 
-print "\n\n  * * * * * * * * * * *    NTP SUCCESSFULLY CONFIGURED    * * * * * * * * * * *  \n"
+print "\n\n  * * * * * * * * * * *    NTP SUCCESSFULLY CONFIGURED    * * * * * * * * * * *  \n
