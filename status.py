@@ -17,9 +17,13 @@ print('\n                            INTERFACE STATUS ON CSRv1                  
 print(' --------------------------------------------------------------------------------\n')
 output = net_connect.send_command("show ip int brief")
 print output
-print('\n                             PROTOCOL STATUS ON CSRv1                           ')
+print('\n                             ROUTING TABLE                               ')
 print(' --------------------------------------------------------------------------------\n')
-output = net_connect.send_command("show run ")
+output = net_connect.send_command("show ip route")
+print output
+print('\n                             BGP ROUTE TABLE                               ')
+print(' --------------------------------------------------------------------------------\n')
+output = net_connect.send_command("show ip bgp")
 print output
 
 platform = 'cisco_ios'
@@ -37,6 +41,14 @@ print('\n                          INTERFACE STATUS ON CSRv2                    
 print(' --------------------------------------------------------------------------------\n')
 output = net_connect.send_command("show ip int brief")
 print output
+print('\n                             ROUTING TABLE                               ')
+print(' --------------------------------------------------------------------------------\n')
+output = net_connect.send_command("show ip route")
+print output
+print('\n                             BGP ROUTE TABLE                               ')
+print(' --------------------------------------------------------------------------------\n')
+output = net_connect.send_command("show ip bgp")
+print output
 
 platform = 'cisco_ios'
 host = '192.168.2.13'
@@ -51,9 +63,17 @@ net_connect.find_prompt()
  #using send_command() method to send the 'show ip int brief' command to router
 print('\n                             INTERFACE STATUS ON CSRv3                          ')
 print(' --------------------------------------------------------------------------------\n')
-
 output = net_connect.send_command("show ip int brief")
 print output
+print('\n                             ROUTING TABLE                               ')
+print(' --------------------------------------------------------------------------------\n')
+output = net_connect.send_command("show ip route")
+print output
+print('\n                             BGP ROUTE TABLE                               ')
+print(' --------------------------------------------------------------------------------\n')
+output = net_connect.send_command("show ip bgp")
+print output
+
 
 platform = 'juniper'
 host = '192.168.2.14'
@@ -90,7 +110,7 @@ print('\n                         INTERFACE STATUS ON SRX2                      
 print('---------------------------------------------------------------------------------\n')
 output = net_connect.send_command("show interfaces terse")
 print output
-print('...................JUNIPER COMMAND SHOW INTERFACES TERSE OUTPUT....................')
+print('                         JUNIPER COMMAND SHOW INTERFACES TERSE OUTPUT')
 print('---------------------------------------------------------------------------------\n')
 output = net_connect.send_command("")
 print output
