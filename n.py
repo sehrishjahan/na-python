@@ -26,8 +26,9 @@ def main():
         print ntpconfig
         print
         print"\n    CLOCK TIMING"
-        output = net_connect.send_command("show system uptime | match current")
+        output = net_connect.send_command("show clock")
         print output
+
 
 if __name__ == "__main__":
   main()
