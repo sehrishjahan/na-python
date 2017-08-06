@@ -1,0 +1,7 @@
+             <snmp>                      
+                <location>JuniperSRX, Toronto, ON, CA</location>
+                <contact>rajwinder.kaur@ryerson.ca</contact>
+                <community>             
+                    <name>cisco1234</name>
+                </community>            
+             </snmp> 
