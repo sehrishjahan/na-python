@@ -1,11 +1,7 @@
 from datetime import datetime
-
 from netmiko import ConnectHandler
 from mydevices import csrv1, csrv2, csrv3
 import getpass
-
-#from devices import csrv, csrv2, csrv3
-
 def check_bgp(net_connect, cmd='show run | inc router bgp'):
     """Check whether BGP is currently configured on device. Return boolean"""
     output = net_connect.send_command_expect(cmd)
@@ -36,9 +32,6 @@ def main():
     print 
     start_time = datetime.now()
     print
-#     file_list = ['bgp_csrv1.txt', 'bgp_csrv2.txt', 'bgp_csrv3.txt'] 
-    
-
     for a_device in device_list:
        # as_number = a_device.pop('as_number')
         print a_device
@@ -46,7 +39,6 @@ def main():
         net_connect = ConnectHandler(**a_device)
         
         net_connect.enable()
-        #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt())
         if check_bgp(net_connect):
             print "\n         BGP currently configured   \n"
             remove_bgp_config(net_connect, as_number=as_number)
@@ -67,13 +59,9 @@ def main():
         bgpconfig = configure_bgp(net_connect, file_name)
         print bgpconfig
         print
-#         bgpconfig2 = configure_bgp(net_connect, 'bgp_csrv2.txt')
-#         print bgpconfig2
-#         bgpconfig3 = configure_bgp(net_connect, 'bgp_csrv3.txt')
-#         print bgpconfig3
-        
-    
-    print "Time elapsed: {}\n".format(datetime.now() - start_time)
+  print "Time elapsed: {}\n".format(datetime.now() - start_time)
 
 if __name__ == "__main__":
     main()
+    
+print "\n\n * * * * * * * * *   CONFIGURATION WAS DONE SUCCESSFULLY    * * * * * * * * * *  \n"
