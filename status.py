@@ -13,7 +13,7 @@ net_connect.find_prompt()
  
  #using send_command() method to send the 'show ip int brief' command to router
 print('\n                             MONITORING OF THE NETWORK                          \n')
-print('\n.............................INTERFACE STATUS ON CSRv1..........................\n')
+print('\n.............................INTERFACE STATUS ON CSRv1..........................')
 print('--------------------------------------------------------------------------------\n')
 output = net_connect.send_command("show ip int brief")
 print output
@@ -29,7 +29,7 @@ net_connect = ConnectHandler(device_type=platform, ip=host, username='cisco', pa
 net_connect.find_prompt()
  
  #using send_command() method to send the 'show ip int brief' command to router
-print('\n.............................INTERFACE STATUS ON CSRv2..........................\n')
+print('\n.............................INTERFACE STATUS ON CSRv2..........................')
 print('--------------------------------------------------------------------------------\n')
 output = net_connect.send_command("show ip int brief")
 print output
@@ -45,8 +45,9 @@ net_connect = ConnectHandler(device_type=platform, ip=host, username='cisco', pa
 net_connect.find_prompt()
  
  #using send_command() method to send the 'show ip int brief' command to router
-print('\n.............................INTERFACE STATUS ON CSRv3..........................\n')
+print('\n.............................INTERFACE STATUS ON CSRv3..........................')
 print('--------------------------------------------------------------------------------\n')
+
 output = net_connect.send_command("show ip int brief")
 print output
 
@@ -60,12 +61,14 @@ net_connect = ConnectHandler(device_type=platform, ip=host, username='juniper', 
 net_connect.find_prompt()
 
 #using send_command() method to send the 'show configuration' command to router
-print('...................JUNIPER COMMAND SHOW CONFIGURATION OUTPUT....................\n\n')
+print('...................JUNIPER COMMAND SHOW CONFIGURATION OUTPUT......................')
 print('--------------------------------------------------------------------------------\n')
+
 output = net_connect.send_command("show configuration ")
 print output
-print('...................JUNIPER COMMAND SHOW INTERFACES TERSE OUTPUT................\n\n')
+print('...................JUNIPER COMMAND SHOW INTERFACES TERSE OUTPUT...................')
 print('--------------------------------------------------------------------------------\n')
+
 output = net_connect.send_command("show interfaces terse ")
 print output
 
@@ -79,11 +82,11 @@ net_connect = ConnectHandler(device_type=platform, ip=host, username='juniper', 
 net_connect.find_prompt()
 
 #using send_command() method to send the 'show configuration' command to router
-print('...................JUNIPER COMMAND SHOW CONFIGURATION OUTPUT....................\n\n')
-print('--------------------------------------------------------------------------------\n')
+print('...................JUNIPER COMMAND SHOW CONFIGURATION OUTPUT.......................')
+print('---------------------------------------------------------------------------------\n')
 output = net_connect.send_command("show configuration ")
 print output
-print('...................JUNIPER COMMAND SHOW INTERFACES TERSE OUTPUT................\n\n')
-print('--------------------------------------------------------------------------------\n')
+print('...................JUNIPER COMMAND SHOW INTERFACES TERSE OUTPUT....................')
+print('---------------------------------------------------------------------------------\n')
 output = net_connect.send_command("show interfaces terse ")
 print output
