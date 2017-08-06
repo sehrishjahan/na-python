@@ -4,7 +4,7 @@ import getpass
 
 #from devices import csrv, csrv2, csrv3
 
- def configure_ntp(net_connect, file_name=''):
+def configure_ntp(net_connect, file_name=''):
      """Configure NTP on device."""
      try:
          output = net_connect.send_config_from_file(config_file=file_name)
@@ -12,7 +12,7 @@ import getpass
      except IOError:
          print "Error reading file: {}".format(file_name)
 
- def main():
+def main():
      device_list = [csrv1, csrv2, csrv3]
      print "\n              CONFIGURING NTP PROTOCOL   "
      print 
