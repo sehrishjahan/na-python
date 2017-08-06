@@ -40,7 +40,7 @@ def main():
          output = net_connect.send_command("show clock")
          print output
  
- if __name__ == "__main__":
+if __name__ == "__main__":
    main()
  
 print "\n\n  * * * * * * * * * * *    NTP SUCCESSFULLY CONFIGURED    * * * * * * * * * * *  \n"
