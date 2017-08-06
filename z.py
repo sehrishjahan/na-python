@@ -1,84 +1,38 @@
+from netmiko import ConnectHandler
+from mydevices import srx1, srx2
+import getpass
 
-print sniff.__doc__
-import logging
-import subprocess
-try:
-    from scapy.all import *
+#from devices import srx1, srx2
 
-except ImportError:
-    print "Scapy package for Python is not installed on your system."
-    print "Get it from https://pypi.python.org/pypi/scapy and try again."
-    sys.exit()
+def configure_snmp(net_connect, file_name=''):
+    """Configure SNMP on device."""
+    try:
+        output = net_connect.send_config_from_file(config_file=file_name)
+        return output
+    except IOError:
+        print "Error reading file: {}".format(file_name)
 
-print "\n! Make sure to run this program as ROOT !\n"
-net_iface = raw_input("* Enter the interface on which to run the sniffer (like 'eth1'): ")
-subprocess.call(["ifconfig", net_iface, "promisc"], stdout=None, stderr=None, shell=False)
-print "\nInterface %s was set to PROMISC mode." % net_iface
-print
-#Asking the user for the number of packets to sniff (the "count" parameter)
-pkt_to_sniff = raw_input("Enter the number of packets to capture (0 is infinity): ")
-#Considering the case when the user enters 0 (infinity)
-if int(pkt_to_sniff) != 0:
-    print "\nThe program will capture %d packets." % int(pkt_to_sniff)
-    print
-elif int(pkt_to_sniff) == 0:
-    print "\nThe program will capture packets until the timeout expires."
-    print
-#Asking the user for the time interval to sniff (the "timeout" parameter)
-time_to_sniff = raw_input("* Enter the number of seconds to run the capture: ")
-#Handling the value entered by the user
-if int(time_to_sniff) != 0:
-    print "\nThe program will capture packets for %d seconds." % int(time_to_sniff)
-    print
+def main():
+    device_list = [srx1, srx2]
+    print "\n              CONFIGURING SNMP PROTOCOL   "
+    print 
+  
+    for a_device in device_list:
+        net_connect = ConnectHandler(**a_device)
+        
+        net_connect.enable()
+        #print "{}: {}".format(net_connect.device_type, net_connect.find_prompt()
+       
+         
+        device_type = net_connect.device_type
+        file_name = "snmp_" + (a_device ['username']) + ".xml"
+        print "\n  Reading file : "
+        print "  {}\n".format(file_name)
     
-#Asking the user for any protocol filter he might want to apply to the sniffing process
-#For this example I chose three protocols: ARP, BOOTP, ICMP
-#You can customize this to add your own desired protocols
-proto_sniff = raw_input("* Enter the protocol to filter by (arp|bootp|icmp|0 is all): ")
+    # Configure SNMP
+        snmpconfig = configure_snmp(net_connect, file_name)
+        print snmpconfig
+        print
 
-#Considering the case when the user enters 0 (all)
-if (proto_sniff == "arp") or (proto_sniff == "bootp") or (proto_sniff == "icmp"):
-    print "\nThe program will capture only %s packets." % proto_sniff.upper()
-    print
-elif int(proto_sniff) == 0:
-    print "\nThe program will capture all protocols."
-    print
-
-
-#Creating an external file for packet logging
-file_name = raw_input("* Please give a name to the log file: ")
-sniffer_log = open(file_name, "w")
-
-
-#Initializing the packet counter
-packet_no = 0
-
-#This is the function that will be applied to each captured packet
-#The function will extract some parameters from the packet and then log each packet to an external file
-def packet_log(pkt):
-    #The packet index
-    global packet_no
-    
-    #Filtering the packets based on the protocol. Using the lower() method to ignore the case when searching for the protocol in the packet.    
-    if proto_sniff.lower() in pkt[0][1].summary().lower():
-        packet_no = packet_no + 1
-        #Writing the data for each packet to the external file
-        print >>sniffer_log, "Packet " + str(packet_no) + ": " + "SMAC: " + pkt[0].src + " DMAC: " + pkt[0].dst
-    
-
-print "\n* Starting the capture... Waiting for %s seconds..." % time_to_sniff
-
-#Running the sniffing process
-pkt = sniff(iface=net_iface, count=int(pkt_to_sniff), timeout=int(time_to_sniff), prn=packet_log)
-
-#print pkt.show()
-
-#Printing the closing message
-print "\n* The timeout of %s seconds has passed." % time_to_sniff
-print "* Please check the %s file to see the captured packets.\n" % file_name
-
-
-#Closing the log file
-sniffer_log.close()
-
-#End of program. Feel free to modify it, test it, add new protocols to sniff and improve de code whenever you feel the need to.
+if __name__ == "__main__":
+    main()
