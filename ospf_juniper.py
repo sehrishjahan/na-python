@@ -2,9 +2,6 @@ from datetime import datetime
 from netmiko import ConnectHandler
 from mydevices import srx1, srx2
 import getpass
-
-print "\n\n * * * * * * * * * *    CONFIGURING OSPF ON JUNIPER DEVICES    * * * * * * * * *  \n"
-
 def check_ospf(net_connect, cmd='show route protocol ospf'):
     """Check whether oospf is currently configured on device. Return boolean"""
     output = net_connect.send_command_expect(cmd)
@@ -29,7 +26,7 @@ def configure_ospf(net_connect, file_name=''):
 
 def main():
     device_list = [srx1, srx2]
-    print "\n                           CONFIGURING OSPF PROTOCOL ON JUNIPER DEVICES                    "
+    print "\n\n * * * * * * * * * *    CONFIGURING OSPF ON JUNIPER DEVICES    * * * * * * * * *  \n"                   
     print
     start_time = datetime.now()
     print
