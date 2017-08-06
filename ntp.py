@@ -12,7 +12,7 @@ def configure_ntp(net_connect, file_name=''):
     except IOError:
          print "Error reading file: {}".format(file_name)
 
- def main():
+def main():
      device_list = [csrv1, csrv2, csrv3]
      print "\n              CONFIGURING NTP PROTOCOL   "
      print 
