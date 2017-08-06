@@ -76,7 +76,7 @@ def main():
      print "Time elapsed: {}\n".format(datetime.now() - start_time)
 
  
- if __name__ == "__main__":
+if __name__ == "__main__":
      main()
     
 print "\n\n * * * * * * * * *   CONFIGURATION WAS DONE SUCCESSFULLY    * * * * * * * * * *  \n"
