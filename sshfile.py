@@ -1,10 +1,14 @@
 from netmiko import ConnectHandler #imported netmiko library
-from mydevices import csrv1, csrv2, srx2
+
  #initialized variables.
 platform = 'cisco_ios'
 host = '192.168.2.11'
 username = 'cisco'
  
+platform = 'juniper'
+host = '192.168.2.15'
+username = 'juniper'
+password = 'cisco1234'
  #calling ConnectHandler function and passing in variables
 
 net_connect = ConnectHandler(device_type=platform, ip=host, username='cisco', password='cisco1234')
@@ -14,10 +18,7 @@ net_connect.find_prompt()
 output = net_connect.send_command("show ip int brief")
 print output
 
-platform = 'juniper'
-host = '192.168.2.15'
-username = 'juniper'
-password = 'cisco1234'
+
 
 #calling ConnectHandler function and passing in variables
 net_connect = ConnectHandler(device_type=platform, ip=host, username='juniper', password='cisco1234')
