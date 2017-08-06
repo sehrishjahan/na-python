@@ -1,1 +1,7 @@
-redistribute ospf 100 match internal external 1 external 2
+             <snmp>                      
+                <location>JuniperSRX, Toronto, ON, CA</location>
+                <contact>rajwinder.kaur@ryerson.ca</contact>
+                <community>             
+                    <name>cisco1234</name>
+                </community>            
+            </snmp> 
