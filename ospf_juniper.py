@@ -26,7 +26,7 @@ def configure_ospf(net_connect, file_name=''):
 
 def main():
     device_list = [srx1, srx2]
-    print "\n\n * * * * * * * * * *    CONFIGURING OSPF ON JUNIPER DEVICES    * * * * * * * * *  \n"                   
+    print "\n\n * * * * * * * * * *    CONFIGURING OSPF ON JUNIPER DEVICES    * * * * * * * * * *"                   
     print
     start_time = datetime.now()
     print
