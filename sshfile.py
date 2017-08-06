@@ -1,5 +1,5 @@
 from netmiko import ConnectHandler #imported netmiko library
-
+from mydevices import csrv1
 #initialized variables.
 platform = 'cisco_ios'
 host = '192.168.2.11'
