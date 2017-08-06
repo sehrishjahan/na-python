@@ -18,6 +18,10 @@ print output
 net_connect = ConnectHandler(device_type=platform, ip=host, username='juniper', password='cisco1234')
 net_connect.find_prompt()
 
+platform = 'juniper'
+host = '192.168.2.15'
+username = 'juniper'
+password = 'cisco1234
 #using send_command() method to send the 'show configuration' command to router
 print('\n###############################################################################\n\n')
 print('...................JUNIPER COMMAND SHOW CONFIGURATION OUTPUT....................\n\n')
