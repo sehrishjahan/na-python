@@ -79,7 +79,7 @@ print(' ------------------------------------------------------------------------
 output = net_connect.send_command("show interfaces terse")
 print output
 print('                             ROUTING TABLE                     ')
-print('-----------------------------------------------------------------------------------')
+print(' -----------------------------------------------------------------------------------')
 output = net_connect.send_command("show route ")
 print output
     #SRX2
@@ -91,10 +91,10 @@ password = 'cisco1234'
 net_connect = ConnectHandler(device_type=platform, ip=host, username='juniper', password='cisco1234')
 net_connect.find_prompt()
 print('\n                          INTERFACE STATUS ON SRX2                                  ')
-print('---------------------------------------------------------------------------------\n')
+print(' ---------------------------------------------------------------------------------\n')
 output = net_connect.send_command("show interfaces terse")
 print output
 print('                            ROUTING TABLE')
-print('---------------------------------------------------------------------------------')
+print(' ---------------------------------------------------------------------------------')
 output = net_connect.send_command("show route")
 print output
