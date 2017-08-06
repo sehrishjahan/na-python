@@ -31,7 +31,7 @@ def main():
     device_list = [srx1, srx2]
     print "\n                           CONFIGURING OSPF PROTOCOL ON JUNIPER DEVICES                    "
     print
-    start_time = datetime.mow()
+    start_time = datetime.now()
     print
     
     for a_device in device_list:
