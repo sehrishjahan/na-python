@@ -1,0 +1,1 @@
+redistribute ospf 100 match internal external 1 external 2
