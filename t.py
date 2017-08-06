@@ -45,7 +45,7 @@ def main():
         if check_ospf(net_connect):
             raise ValueError("OSPF configuration still detected")
 
-       device_type = net_connect.device_type
+        device_type = net_connect.device_type
         file_name = "ospf_" + str(a_device ['ip']) + ".txt"
         print "\n  Reading file : "
         print "  {}\n".format(file_name)
