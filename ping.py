@@ -8,5 +8,5 @@ def ping():
     else:
         print("System " + s + " is DOWN !")
         #Prompting user for ip address
-s = raw_input('\nEnter the ip address: ')  
+s = raw_input('\n  Enter the ip address:  ')  
 ping() #calling ping function
