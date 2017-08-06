@@ -33,12 +33,12 @@ def main():
          print "  {}\n".format(file_name)
     
      # Configure NTP
-        ntpconfig = configure_ntp(net_connect, file_name)
-        print ntpconfig
-        print
-        print"\n    CLOCK TIMING"
-        output = net_connect.send_command("show clock")
-        print output
+         ntpconfig = configure_ntp(net_connect, file_name)
+         print ntpconfig
+         print
+         print"\n    CLOCK TIMING"
+         output = net_connect.send_command("show clock")
+         print output
  
  if __name__ == "__main__":
    main()
