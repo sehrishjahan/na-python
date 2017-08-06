@@ -1,9 +1,6 @@
 from netmiko import ConnectHandler #imported netmiko library
 from mydevices import csrv1
 #initialized variables.
-platform = 'cisco_ios'
-host = '192.168.2.11'
-username = 'cisco'
 
 #calling ConnectHandler function and passing in variables
 net_connect = ConnectHandler(device_type=platform, ip=host, username='cisco', password='cisco1234')
