@@ -79,7 +79,7 @@ print(' ------------------------------------------------------------------------
 output = net_connect.send_command("show interfaces terse")
 print output
 print('                             ROUTING TABLE                     ')
-print('----------------------------------------------------------------------------------\n')
+print('-----------------------------------------------------------------------------------')
 output = net_connect.send_command("show route ")
 print output
     #SRX2
@@ -95,6 +95,6 @@ print('-------------------------------------------------------------------------
 output = net_connect.send_command("show interfaces terse")
 print output
 print('                            ROUTING TABLE')
-print('---------------------------------------------------------------------------------\n')
+print('---------------------------------------------------------------------------------')
 output = net_connect.send_command("show route")
 print output
