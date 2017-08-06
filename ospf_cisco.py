@@ -2,9 +2,6 @@ from datetime import datetime
 from netmiko import ConnectHandler
 from mydevices import csrv2, csrv3
 import getpass
-
-#from devices import csrv2, csrv3
-
 def check_ospf(net_connect, cmd='show run | inc router ospf'):
     """Check whether OSPF is currently configured on device. Return boolean"""
     output = net_connect.send_command_expect(cmd)
