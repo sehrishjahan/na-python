@@ -1,5 +1,5 @@
 from netmiko import ConnectHandler
-from mydevices import srx1,srx2
+from mydevices import csrv1, csrv2, csrv3
 import getpass
 def configure_ntp(net_connect, file_name=''):
     """Configure NTP on device."""
@@ -10,7 +10,7 @@ def configure_ntp(net_connect, file_name=''):
         print "Error reading file: {}".format(file_name)
 
 def main():
-    device_list = [srx1, srx2]
+    device_list = [csrv1, csrv2, csrv3]
     print "\n              CONFIGURING NTP PROTOCOL   "
     print 
   
