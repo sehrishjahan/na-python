@@ -31,19 +31,18 @@ def main():
     for a_device in device_list:
        # as_number = a_device.pop('process_id')
         print a_device
-        process_id = 100
+        as_number = 100
         net_connect = ConnectHandler(**a_device)
-        
         net_connect.enable()
         if check_ospf(net_connect):
               print "\n         OSPF currently configured   \n"
-              remove_ospf_config(net_connect, process_id=process_id)
+              remove_bgp_config(net_connect, as_number=as_number)
         else:
               print "\n         No OSPF"
    
         # Construct file name 
         # Check OSPF is now gone
-        if check_ospf(net_connect):
+        if check_bgp(net_connect):
             raise ValueError("OSPF configuration still detected")
           
         device_type = net_connect.device_type
