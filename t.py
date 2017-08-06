@@ -29,8 +29,11 @@ def configure_ospf(net_connect, file_name=''):
 
 def main():
     device_list = [srx1, srx2]
+    print "\n                           CONFIGURING OSPF PROTOCOL ON JUNIPER DEVICES                    "
     print
-
+    start_time = datetime.mow()
+    print
+    
     for a_device in device_list:
         as_number = 100
         net_connect = ConnectHandler(**a_device)
