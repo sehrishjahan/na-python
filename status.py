@@ -12,7 +12,8 @@ net_connect = ConnectHandler(device_type=platform, ip=host, username='cisco', pa
 net_connect.find_prompt()
  
  #using send_command() method to send the 'show ip int brief' command to router
-print('.............................INTERFACE STATUS ON CSRv1.......................\n\n')
+print('\n                             MONITORING OF THE NETWORK                          \n')
+print('\n.............................INTERFACE STATUS ON CSRv1..........................\n')
 print('--------------------------------------------------------------------------------\n')
 output = net_connect.send_command("show ip int brief")
 print output
@@ -28,7 +29,7 @@ net_connect = ConnectHandler(device_type=platform, ip=host, username='cisco', pa
 net_connect.find_prompt()
  
  #using send_command() method to send the 'show ip int brief' command to router
-print('.............................INTERFACE STATUS ON CSRv1.......................\n\n')
+print('\n.............................INTERFACE STATUS ON CSRv2..........................\n')
 print('--------------------------------------------------------------------------------\n')
 output = net_connect.send_command("show ip int brief")
 print output
@@ -44,7 +45,7 @@ net_connect = ConnectHandler(device_type=platform, ip=host, username='cisco', pa
 net_connect.find_prompt()
  
  #using send_command() method to send the 'show ip int brief' command to router
-print('.............................INTERFACE STATUS ON CSRv1.......................\n\n')
+print('\n.............................INTERFACE STATUS ON CSRv3..........................\n')
 print('--------------------------------------------------------------------------------\n')
 output = net_connect.send_command("show ip int brief")
 print output
