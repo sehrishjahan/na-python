@@ -4,9 +4,9 @@ def ping():
     response = os.system("ping -c 3 " + s)
     #check the response
     if response == 0:
-        print("System " + s + " is UP !")
+        print("\nSystem " + s + " is UP !!!!\n")
     else:
         print("System " + s + " is DOWN !")
         #Prompting user for ip address
-s = raw_input('Enter the ip address: ')  
+s = raw_input('\nEnter the ip address: ')  
 ping() #calling ping function
