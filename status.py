@@ -4,7 +4,7 @@ from mydevices import csrv1
 #initialized variables
 
 #calling ConnectHandler function and passing in variables
-net_connect = ConnectHandler(device_type=device_type, ip=ip, username=username, password=password)
+net_connect = ConnectHandler(device_type='device_type', ip='ip', username='username', password='password')
 net_connect.find_prompt()
 
 #using send_command() method to send the 'show configuration' command to router
