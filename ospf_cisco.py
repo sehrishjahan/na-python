@@ -45,7 +45,6 @@ def main():
               print "\n         No OSPF"
    
         # Construct file name 
-       
         # Check OSPF is now gone
         if check_ospf(net_connect):
             raise ValueError("OSPF configuration still detected")
@@ -56,14 +55,9 @@ def main():
         print "  {}\n".format(file_name)
     
     # Configure OSPF
-        bgpconfig = configure_ospf(net_connect, file_name)
-        print bgpconfig
+        ospfconfig = configure_ospf(net_connect, file_name)
+        print ospfconfig
         print
-#         bgpconfig2 = configure_bgp(net_connect, 'bgp_csrv2.txt')
-#         print bgpconfig2
-#         bgpconfig3 = configure_bgp(net_connect, 'bgp_csrv3.txt')
-#         print bgpconfig3
-        
     
     print "Time elapsed: {}\n".format(datetime.now() - start_time)
 
