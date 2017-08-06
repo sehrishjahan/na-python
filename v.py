@@ -73,7 +73,7 @@ def main():
 #         print bgpconfig3
         
     
-    print "Time elapsed: {}\n".format(datetime.now() - start_time)
+     print "Time elapsed: {}\n".format(datetime.now() - start_time)
   
  
 if __name__ == "__main__":
