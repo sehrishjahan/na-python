@@ -14,4 +14,4 @@ ssh.connect(ip, username=username, password=password)
 stdin, stdout, stderr = ssh.exec_command('show ip int br')
 
 output = stdout.readlines()
-print \n.joinoutput()
+  print \n.joinoutput()
