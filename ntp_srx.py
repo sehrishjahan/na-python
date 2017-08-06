@@ -1,7 +1,6 @@
 from netmiko import ConnectHandler
 from mydevices import srx1,srx2
 import getpass
-
 def configure_ntp(net_connect, file_name=''):
     """Configure NTP on device."""
     try:
@@ -17,14 +16,11 @@ def main():
   
     for a_device in device_list:
         net_connect = ConnectHandler(**a_device)
-        
         net_connect.enable()
-         
         device_type = net_connect.device_type
         file_name = "ntp_" + (a_device ['username']) + ".txt"
         print "\n  Reading file : "
         print "  {}\n".format(file_name)
-    
     # Configure NTP
         ntpconfig = configure_ntp(net_connect, file_name)
         print ntpconfig
