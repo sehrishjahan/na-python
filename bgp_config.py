@@ -58,7 +58,7 @@ def main():
     # Configure BGP
 class MyError(Exception):
      def __init__(self, value):
-         self.value = 192.168.0.0
+         self.value = value
      def __str__(self):
          return repr(self.value)
 
