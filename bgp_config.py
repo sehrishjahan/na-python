@@ -63,14 +63,14 @@ class MyError(Exception):
          return repr(self.value)
 
      try:
-     raise MyError(2*2)
+        raise MyError(2*2)
      except MyError as e:
      print 'My exception occurred, value:', e.value
    
-            bgpconfig = configure_bgp(net_connect, file_name)
+        bgpconfig = configure_bgp(net_connect, file_name)
         print bgpconfig
         print
-        except
+        
     print "Time elapsed: {}\n".format(datetime.now() - start_time)
 
 if __name__ == "__main__":
