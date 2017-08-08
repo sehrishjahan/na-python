@@ -55,13 +55,9 @@ def main():
         print "\n  Reading file : "
         print "  {}\n".format(file_name)
     
-    bgpconfig = configure_bgp(net_connect, file_name)
-    print bgpconfig
-    print
    
-    print "Time elapsed: {}\n".format(datetime.now() - start_time)
-
     # Configure BGP
+    
 class MyError(Exception):
       def __init__(self, value):
              self.value = "% Invalid input detected at '^' marker."
@@ -71,7 +67,12 @@ try:
     raise MyError(2*2)
 except MyError as e:
     print 'My exception occurred, value:', e.value
-        
+    bgpconfig = configure_bgp(net_connect, file_name)
+    print bgpconfig
+    print
+   
+    print "Time elapsed: {}\n".format(datetime.now() - start_time)
+  
     
 if __name__ == "__main__":
     main()
