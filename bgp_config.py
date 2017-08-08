@@ -56,11 +56,20 @@ def main():
         print "  {}\n".format(file_name)
     
     # Configure BGP
+class MyError(Exception):
+     def __init__(self, value):
+         self.value = 
+     def __str__(self):
+         return repr(self.value)
 
+ try:
+     raise MyError(2*2)
+ except MyError as e:
+     print 'My exception occurred, value:', e.value
         bgpconfig = configure_bgp(net_connect, file_name)
         print bgpconfig
         print
-        
+   
     print "Time elapsed: {}\n".format(datetime.now() - start_time)
 
 if __name__ == "__main__":
