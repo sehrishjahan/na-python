@@ -62,9 +62,9 @@ class MyError(Exception):
       def __str__(self):
          return repr(self.value)
 
-            try:
+        try:
                 raise MyError(2*2)
-            except MyError as e:
+        except MyError as e:
             print 'My exception occurred, value:', e.value
         
         bgpconfig = configure_bgp(net_connect, file_name)
