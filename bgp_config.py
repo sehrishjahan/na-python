@@ -18,7 +18,7 @@ def remove_bgp_config(net_connect, cmd='no router bgp', as_number=''):
 
 def configure_bgp(net_connect, file_name=''):
     """Configure BGP on device."""
-    try:
+     try:
         output = net_connect.send_config_from_file(config_file=file_name)
         #if net_connect.device_type == 'cisco_xr_ssh':
          #   output += net_connect.commit()
@@ -56,16 +56,16 @@ def main():
         print "  {}\n".format(file_name)
     
     # Configure BGP
-class MyError(Exception):
-     def __init__(self, value):
-         self.value = "% Invalid input detected at '^' marker."
-     def __str__(self):
+    class MyError(Exception):
+        def __init__(self, value):
+             self.value = "% Invalid input detected at '^' marker."
+        def __str__(self):
          return repr(self.value)
 
- try:
-     raise MyError(2*2)
- except MyError as e:
-     print 'My exception occurred, value:', e.value
+            try:
+                raise MyError(2*2)
+            except MyError as e:
+            print 'My exception occurred, value:', e.value
         
         bgpconfig = configure_bgp(net_connect, file_name)
         print bgpconfig
