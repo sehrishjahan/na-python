@@ -56,10 +56,10 @@ def main():
         print "  {}\n".format(file_name)
     
     # Configure BGP
-    class MyError(Exception):
-        def __init__(self, value):
+class MyError(Exception):
+      def __init__(self, value):
              self.value = "% Invalid input detected at '^' marker."
-        def __str__(self):
+      def __str__(self):
          return repr(self.value)
 
             try:
