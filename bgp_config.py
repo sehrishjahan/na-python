@@ -56,7 +56,7 @@ def main():
         print "  {}\n".format(file_name)
     
     # Configure BGP
-   class MyError(Exception):
+class MyError(Exception):
      def __init__(self, value):
          self.value = 192.168.0.0
      def __str__(self):
@@ -64,7 +64,7 @@ def main():
 
      try:
      raise MyError(2*2)
- except MyError as e:
+     except MyError as e:
      print 'My exception occurred, value:', e.value
    
             bgpconfig = configure_bgp(net_connect, file_name)
