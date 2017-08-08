@@ -66,9 +66,9 @@ try:
 except MyError as e:
     print 'My exception occurred, value:', e.value
         
-        bgpconfig = configure_bgp(net_connect, file_name)
-        print bgpconfig
-        print
+    bgpconfig = configure_bgp(net_connect, file_name)
+    print bgpconfig
+    print
    
     print "Time elapsed: {}\n".format(datetime.now() - start_time)
 
