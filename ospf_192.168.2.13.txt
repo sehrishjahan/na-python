@@ -2,3 +2,6 @@ router ospf 100
 router-id 3.3.3.3
 redistribute bgp 100 metric 10 subnets
 network 192.168.5.0 0.0.0.255 area 0
+exit
+router bgp 100
+redistribute ospf 100 match internal external 1 external 2
